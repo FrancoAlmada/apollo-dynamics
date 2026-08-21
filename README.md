@@ -1,100 +1,130 @@
-# Apollo Dynamics — sitio web
+# Apollo Dynamics
 
-Sitio de la agencia, reescrito desde cero en HTML, CSS y JavaScript puro.
-Reemplaza la versión que estaba en Webflow. Sin build, sin dependencias, sin frameworks.
+Sitio web de una agencia de marketing digital, escrito desde cero en HTML, CSS y JavaScript puro.
+Sin frameworks, sin build step y sin dependencias en tiempo de ejecución.
+
+![Vista del sitio](assets/preview.png)
+
+**Demo:** https://curious-pony-6cb829.netlify.app
+
+---
+
+## Por qué existe
+
+La agencia tenía su sitio en Webflow. Funcionaba, pero traía los problemas típicos de un
+constructor visual: ~2.700 líneas de CSS del framework, jQuery, scripts de Meta Pixel y
+reCAPTCHA, e imágenes de hasta 5157 px sin optimizar. Además el contenido mezclaba inglés
+y español, y no había menú móvil real.
+
+Este proyecto lo reemplaza conservando la identidad visual (paleta oscura, verde de marca,
+tipografía serif) pero con código propio, mantenible y sin terceros.
+
+## Stack
+
+| | |
+|---|---|
+| Markup | HTML5 semántico |
+| Estilos | CSS moderno: custom properties, Grid, Flexbox, `clamp()` |
+| Interacción | JavaScript vanilla (ES5-compatible, sin transpilación) |
+| Tipografías | DM Serif Display + Inter (Google Fonts) |
+| Formulario | FormSubmit (sin backend propio) |
+| Hosting | Netlify |
+
+Cero dependencias. No hay `package.json` porque no hace falta.
+
+## Qué tiene
+
+- **One-page** con navegación por anclas: hero, galería, servicios, proceso, contacto.
+- **Menú móvil accesible**: cierra con `Escape`, bloquea el scroll de fondo, `aria-expanded` correcto.
+- **Reveal en scroll** con `IntersectionObserver` y parallax sutil en la galería.
+- **Formulario validado** en cliente, con errores inline, región `aria-live` y honeypot antispam.
+- **Botón flotante de WhatsApp** con mensaje prellenado.
+- **Responsive** desde 360 px, verificado sin scroll horizontal.
+- **SEO**: Open Graph, Twitter Card y JSON-LD `ProfessionalService`.
+
+## Decisiones de diseño
+
+Algunas cosas se hicieron distinto del original, a propósito:
+
+**Tarjetas de servicio alternadas.** En el original las tres tarjetas estaban del mismo lado,
+lo que generaba una columna monótona. Acá alternan izquierda/derecha con `:nth-of-type(even)`.
+
+**Máscara degradada en la galería.** El original cortaba las fotos en seco contra el fondo.
+Acá se funden con `mask-image: linear-gradient(...)`.
+
+**Sección de proceso, nueva.** El sitio original mostraba estética pero no método. Cuatro pasos
+—diagnóstico, estrategia, ejecución, medición— comunican cómo trabaja la agencia.
+
+**Contenido unificado en español.** El original mezclaba "Our Services" con "Ver Proyecto".
+
+**Honeypot en lugar de reCAPTCHA.** Un campo oculto que los bots completan y las personas no.
+Evita cargar 200 KB de JavaScript de Google y no molesta al visitante.
+
+## Accesibilidad
+
+- Navegación completa por teclado, con foco visible y skip-link.
+- Contraste verificado: el texto oscuro sobre las tarjetas de color cumple WCAG AA.
+- `prefers-reduced-motion` respetado — sin animaciones ni parallax si el sistema lo pide.
+- Imágenes con `width`/`height` explícitos para evitar saltos de layout (CLS).
+
+## Estructura
+
+```
+index.html              Página completa
+css/styles.css          Estilos en 15 secciones numeradas
+js/main.js              Nav móvil, reveal, parallax, formulario
+assets/brand/           Logo y favicon
+assets/hero/            Fotos de la galería
+assets/servicios/       Ilustraciones de las tarjetas
+```
 
 ## Correrlo localmente
 
-No necesita instalación. Podés abrir `index.html` directamente en el navegador,
-aunque conviene levantar un servidor local para que todo se comporte igual que en producción:
+No necesita instalación:
 
 ```bash
 python -m http.server 8899
 ```
 
-Y abrir http://127.0.0.1:8899
+Abrir http://127.0.0.1:8899
 
-## Estructura
-
-```
-index.html              Toda la página (one-page con anclas)
-css/styles.css          Estilos, organizados en 15 secciones numeradas
-js/main.js              Nav móvil, reveal en scroll, parallax, formulario
-assets/brand/           Logos y favicon
-assets/hero/            Fotos del mosaico
-assets/servicios/       Ilustraciones de las tarjetas
-```
-
-## Datos de contacto configurados
-
-| Qué | Valor | Dónde |
-|---|---|---|
-| WhatsApp | `5492996353269` | `index.html`, botón del form y botón flotante |
-| Email | `francoivanalmada@gmail.com` | `index.html` footer, y endpoint del form en `js/main.js` |
-
-El número va en formato internacional sin `+` ni espacios: `54` + `9` + área sin el 0 +
-número sin el 15. Para Neuquén (299): `549` + `299` + `6353269`.
-**El `9` es obligatorio** para celulares argentinos — sin él, WhatsApp no encuentra el contacto.
-
-## Pendiente antes de publicar
-
-Solo queda uno: la **URL real del sitio**, en `index.html` — el `<link rel="canonical">`
-y las metas `og:image` / `twitter:image`. Recién importa cuando haya dominio propio;
-mientras tanto el sitio funciona igual.
-
-## Activar el formulario
-
-Usa [FormSubmit](https://formsubmit.co): gratis, sin registro y sin tarjeta.
-Ya está configurado en `js/main.js` (constante `ENDPOINT`).
-
-**Un solo paso, y hay que hacerlo con el sitio ya publicado:**
-
-1. Entrá al sitio online y mandá una consulta de prueba desde el formulario.
-2. Te llega un mail de FormSubmit pidiendo confirmar la casilla. Aceptalo.
-3. Desde ahí en adelante, todas las consultas te llegan por mail.
-
-Hasta que confirmes, los envíos no se reenvían. Probarlo desde `localhost` no sirve:
-FormSubmit valida el dominio de origen, así que la prueba tiene que ser sobre el sitio publicado.
-
-### Si querés ocultar el email del código
-
-FormSubmit te da un alias aleatorio (tipo `a1b2c3d4...`) en su panel, después del primer envío.
-Reemplazando el email por ese alias en `ENDPOINT`, tu casilla deja de estar visible en el
-código fuente de la página.
-
-### Alternativa si deployás en Netlify
-
-Netlify tiene formularios propios, gratis hasta 100 envíos por mes y sin servicios de terceros.
-Se activa agregando `netlify` y `name="contacto"` al `<form>` y sacando el `fetch` del JS.
-Decidilo según dónde termines hosteando.
+> El formulario **no funciona en local**. FormSubmit solo acepta envíos desde un dominio
+> público; desde `localhost` responde con error. El sitio lo detecta y lo avisa en pantalla
+> en vez de mostrar un error genérico.
 
 ## Deploy
 
-Cualquier hosting estático sirve. Las dos opciones más simples:
+Cualquier hosting estático sirve. Actualmente en Netlify.
 
-- **Netlify** — arrastrás la carpeta a [app.netlify.com/drop](https://app.netlify.com/drop) y ya está online.
-- **GitHub Pages** — subís el repo, y en Settings → Pages elegís la rama `main`.
+- **Netlify Drop** — arrastrar la carpeta a [app.netlify.com/drop](https://app.netlify.com/drop).
+- **Deploy continuo** — conectando este repo, cada `git push` republica el sitio.
 
-## Decisiones de diseño
+## Activar el formulario
 
-- **Paleta y tipografías** heredadas del sitio original (verde `#3fbe94`, fondo `#0e0f0e`,
-  DM Serif Display + Inter) para no perder la identidad de marca.
-- **Tarjetas de servicio alternadas** izquierda/derecha, en lugar de todas del mismo lado.
-- **Mosaico con máscara degradada** al pie, en lugar del corte seco del original.
-- **Contenido unificado en español** — el original mezclaba inglés y español.
-- **Sin terceros**: se sacaron jQuery, Webflow.js, Meta Pixel, reCAPTCHA y Google Analytics.
-  El antispam del formulario es un honeypot (`_honey`), no un captcha.
-- **Imágenes optimizadas**: las ilustraciones pasaron de hasta 5157px a 1200px (~100 KB cada una).
+Usa [FormSubmit](https://formsubmit.co): gratis, sin registro ni tarjeta.
+El endpoint está en `js/main.js` (constante `ENDPOINT`).
 
-## Accesibilidad
+1. Con el sitio ya publicado, enviar una consulta de prueba.
+2. Llega un mail de FormSubmit pidiendo confirmar la casilla. Aceptarlo.
+3. Desde ahí, las consultas llegan por mail.
 
-- Navegación por teclado completa, con foco visible y skip-link.
-- El menú móvil cierra con `Escape` y bloquea el scroll de fondo.
-- Errores de formulario anunciados por `aria-live`.
-- Respeta `prefers-reduced-motion`: sin animaciones ni parallax si el sistema lo pide.
+Para ocultar el email del código fuente, FormSubmit da un alias aleatorio tras el primer
+envío; se reemplaza en `ENDPOINT`.
 
-## Referencia
+**Alternativa:** al estar en Netlify, se puede usar Netlify Forms — sin terceros, sin paso
+de confirmación y con las consultas visibles en el panel.
 
-Los archivos del Webflow original quedaron en la carpeta de arriba
-(`Apollo Dynamics Agency.html` y `Apollo Dynamics Agency_files/`) por si hace falta consultarlos.
-No los usa este proyecto.
+## Pendiente
+
+- [ ] Dominio propio (falta actualizar `<link rel="canonical">` y las metas `og:`/`twitter:`)
+- [ ] Confirmar la casilla en FormSubmit
+- [ ] Reemplazar las métricas del hero por datos reales de la agencia
+
+## Créditos
+
+Fotografías de [Pixabay](https://pixabay.com) y [Pexels](https://pexels.com).
+Ilustraciones de servicios de stock. Logotipo propiedad de Apollo Dynamics.
+
+## Licencia
+
+Código bajo [MIT](LICENSE). Los activos de marca están excluidos — ver la nota en el archivo.
