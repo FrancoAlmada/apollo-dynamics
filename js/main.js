@@ -118,7 +118,17 @@
 
   // FormSubmit: gratis y sin registro. El primer envio dispara un mail de
   // confirmacion a esta casilla; hasta que se acepte, no reenvia nada.
+  // Ojo: solo acepta envios desde un dominio publico, nunca desde localhost.
   var ENDPOINT = 'https://formsubmit.co/ajax/francoivanalmada@gmail.com';
+
+  function esEntornoLocal() {
+    var host = location.hostname;
+    return location.protocol === 'file:' ||
+           host === 'localhost' || host === '0.0.0.0' ||
+           host === '::1' || host === '[::1]' ||
+           host.indexOf('127.') === 0 ||
+           /\.local$/.test(host);
+  }
 
   var MENSAJES = {
     nombre:  'Escribí tu nombre.',
@@ -182,8 +192,16 @@
         status.className = 'form__status is-ok';
         form.reset();
       })
-      .catch(function () {
-        status.textContent = 'No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.';
+      .catch(function (err) {
+        // FormSubmit exige un dominio publico: desde localhost o abriendo el
+        // archivo directo siempre rechaza. Sin este aviso el error parece un
+        // bug del sitio y se pierde tiempo buscando donde no hay nada.
+        if (esEntornoLocal()) {
+          status.textContent = 'El formulario no funciona en local: FormSubmit solo acepta envíos desde el sitio publicado. Ver README.';
+          console.warn('[form] FormSubmit rechaza envíos locales.', err.message);
+        } else {
+          status.textContent = 'No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.';
+        }
         status.className = 'form__status is-error';
       })
       .finally(function () {
