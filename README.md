@@ -25,31 +25,48 @@ assets/hero/            Fotos del mosaico
 assets/servicios/       Ilustraciones de las tarjetas
 ```
 
-## Pendientes antes de publicar
+## Datos de contacto configurados
 
-Están marcados con `TODO` en el código. Son cuatro:
+| Qué | Valor | Dónde |
+|---|---|---|
+| WhatsApp | `5492996353269` | `index.html`, botón del form y botón flotante |
+| Email | `francoivanalmada@gmail.com` | `index.html` footer, y endpoint del form en `js/main.js` |
 
-| Qué | Dónde |
-|---|---|
-| Access key de Web3Forms | `index.html`, campo `access_key` |
-| Número de WhatsApp (3 lugares) | `index.html`, buscar `5490000000000` |
-| Email de contacto | `index.html`, footer |
-| URL real del sitio | `index.html`, `<link rel="canonical">` y metas `og:` |
+El número va en formato internacional sin `+` ni espacios: `54` + `9` + área sin el 0 +
+número sin el 15. Para Neuquén (299): `549` + `299` + `6353269`.
+**El `9` es obligatorio** para celulares argentinos — sin él, WhatsApp no encuentra el contacto.
 
-### Conectar el formulario
+## Pendiente antes de publicar
 
-1. Entrá a [web3forms.com](https://web3forms.com) y poné tu email — te mandan una access key gratis.
-2. Pegala en el campo `access_key` del formulario en `index.html`.
-3. Listo. No hace falta backend: los mensajes te llegan por mail.
+Solo queda uno: la **URL real del sitio**, en `index.html` — el `<link rel="canonical">`
+y las metas `og:image` / `twitter:image`. Recién importa cuando haya dominio propio;
+mientras tanto el sitio funciona igual.
 
-Mientras la key no esté puesta, el formulario avisa al visitante que use WhatsApp
-en vez de fallar en silencio.
+## Activar el formulario
 
-### Número de WhatsApp
+Usa [FormSubmit](https://formsubmit.co): gratis, sin registro y sin tarjeta.
+Ya está configurado en `js/main.js` (constante `ENDPOINT`).
 
-Formato internacional sin `+` ni espacios. Para un celular argentino:
-`549` + código de área sin el 0 + número sin el 15.
-Ejemplo para Buenos Aires: `5491123456789`.
+**Un solo paso, y hay que hacerlo con el sitio ya publicado:**
+
+1. Entrá al sitio online y mandá una consulta de prueba desde el formulario.
+2. Te llega un mail de FormSubmit pidiendo confirmar la casilla. Aceptalo.
+3. Desde ahí en adelante, todas las consultas te llegan por mail.
+
+Hasta que confirmes, los envíos no se reenvían. Probarlo desde `localhost` no sirve:
+FormSubmit valida el dominio de origen, así que la prueba tiene que ser sobre el sitio publicado.
+
+### Si querés ocultar el email del código
+
+FormSubmit te da un alias aleatorio (tipo `a1b2c3d4...`) en su panel, después del primer envío.
+Reemplazando el email por ese alias en `ENDPOINT`, tu casilla deja de estar visible en el
+código fuente de la página.
+
+### Alternativa si deployás en Netlify
+
+Netlify tiene formularios propios, gratis hasta 100 envíos por mes y sin servicios de terceros.
+Se activa agregando `netlify` y `name="contacto"` al `<form>` y sacando el `fetch` del JS.
+Decidilo según dónde termines hosteando.
 
 ## Deploy
 
@@ -66,7 +83,7 @@ Cualquier hosting estático sirve. Las dos opciones más simples:
 - **Mosaico con máscara degradada** al pie, en lugar del corte seco del original.
 - **Contenido unificado en español** — el original mezclaba inglés y español.
 - **Sin terceros**: se sacaron jQuery, Webflow.js, Meta Pixel, reCAPTCHA y Google Analytics.
-  El antispam del formulario es un honeypot.
+  El antispam del formulario es un honeypot (`_honey`), no un captcha.
 - **Imágenes optimizadas**: las ilustraciones pasaron de hasta 5157px a 1200px (~100 KB cada una).
 
 ## Accesibilidad

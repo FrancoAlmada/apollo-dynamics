@@ -116,6 +116,10 @@
   var status = document.getElementById('form-status');
   var submit = document.getElementById('submit-btn');
 
+  // FormSubmit: gratis y sin registro. El primer envio dispara un mail de
+  // confirmacion a esta casilla; hasta que se acepte, no reenvia nada.
+  var ENDPOINT = 'https://formsubmit.co/ajax/francoivanalmada@gmail.com';
+
   var MENSAJES = {
     nombre:  'Escribí tu nombre.',
     email:   'Necesitamos un email válido para responderte.',
@@ -158,26 +162,22 @@
       return;
     }
 
-    var key = form.access_key.value;
-    if (!key || key === 'PEGAR_ACCESS_KEY_AQUI') {
-      status.textContent = 'El formulario todavía no está conectado. Escribinos por WhatsApp mientras tanto.';
-      status.className = 'form__status is-error';
-      return;
-    }
-
     submit.disabled = true;
     submit.textContent = 'Enviando…';
     status.textContent = '';
     status.className = 'form__status';
 
-    fetch('https://api.web3forms.com/submit', {
+    fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
     })
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        if (!data.success) throw new Error(data.message || 'Error del servidor');
+        // FormSubmit devuelve success como string "true", no como booleano
+        if (data.success !== true && data.success !== 'true') {
+          throw new Error(data.message || 'Error del servidor');
+        }
         status.textContent = '¡Listo! Recibimos tu consulta y te respondemos dentro de las 24 horas hábiles.';
         status.className = 'form__status is-ok';
         form.reset();
