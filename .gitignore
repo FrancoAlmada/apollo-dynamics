@@ -1,0 +1,12 @@
+# Herramientas
+.playwright-cli/
+.vscode/
+.idea/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Capturas de verificación
+shot-*.png
