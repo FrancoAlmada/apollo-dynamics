@@ -1,350 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Apollo Dynamics — Agencia de marketing digital y diseño web</title>
-<meta name="description" content="Agencia de marketing digital en Buenos Aires. Generación de leads con Meta Ads, gestión de contenido y diseño web a medida. Estrategias que se miden en resultados, no en impresiones.">
+<title>Apollo Dynamics — Sistemas de IA y automatización que se pueden ver funcionando</title>
+<meta name="description" content="Agencia boutique de IA y automatización para PyMEs de Argentina y LatAm. Agentes de WhatsApp que sacan turnos y toman pedidos, paneles de gestión y automatización con n8n. Con su número, no con promesas.">
 <link rel="canonical" href="https://apollodynamics.com/">
+<meta name="theme-color" content="#f4f3ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
 
-<!-- Open Graph / redes -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Apollo Dynamics">
-<meta property="og:title" content="Apollo Dynamics — Agencia de marketing digital y diseño web">
-<meta property="og:description" content="Generación de leads, gestión de contenido y diseño web. Estrategias que se miden en resultados, no en impresiones.">
-<meta property="og:image" content="assets/brand/logo-claro.png">
+<meta property="og:title" content="Apollo Dynamics — Sistemas de IA que se pueden ver funcionando">
+<meta property="og:description" content="Un WhatsApp que saca turnos y toma pedidos solo, un panel que ordena la gestión, y cada decisión del agente a la vista. Con su número.">
+<meta property="og:image" content="https://apollodynamics.com/assets/marca/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Apollo Dynamics — Agencia de marketing digital y diseño web">
-<meta name="twitter:description" content="Generación de leads, gestión de contenido y diseño web. Estrategias que se miden en resultados, no en impresiones.">
-<meta name="twitter:image" content="assets/brand/logo-claro.png">
+<meta name="twitter:title" content="Apollo Dynamics — Sistemas de IA que se pueden ver funcionando">
+<meta name="twitter:description" content="Un WhatsApp que saca turnos y toma pedidos solo, un panel que ordena la gestión, y cada decisión del agente a la vista.">
+<meta name="twitter:image" content="https://apollodynamics.com/assets/marca/og.png">
 
-<meta name="theme-color" content="#0e0f0e">
-<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/brand/logo-oscuro.png">
-
-<!-- Tipografias: DM Serif Display para titulares, Inter para cuerpo -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap">
-
-<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="assets/marca/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="css/orbita/fuentes/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="css/orbita/fuentes/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/orbita/fuentes.css">
+<link rel="stylesheet" href="css/orbita/tokens.css">
+<link rel="stylesheet" href="css/orbita/base.css">
+<link rel="stylesheet" href="css/orbita/orbita.css">
+<link rel="stylesheet" href="css/sitio.css">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Apollo Dynamics",
-  "description": "Agencia de marketing digital especializada en generación de leads, gestión de contenido y diseño web.",
-  "areaServed": "AR",
-  "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
-  "knowsAbout": ["Marketing digital", "Meta Ads", "Gestión de contenido", "Diseño web"]
+  "alternateName": "Apollo Dynamics Agency",
+  "description": "Agencia boutique de inteligencia artificial y automatización para PyMEs, emprendedores y agencias digitales de Argentina y LatAm.",
+  "url": "https://apollodynamics.com/",
+  "areaServed": ["AR", "LATAM"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressRegion": "CABA", "addressCountry": "AR" },
+  "founder": { "@type": "Person", "name": "Franco Almada" },
+  "knowsAbout": ["Agentes de IA para WhatsApp", "Automatización con n8n", "Paneles de gestión", "Calificación de leads", "QA de sistemas automatizados"]
 }
 </script>
 </head>
-
 <body>
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<a class="solo-lectores" href="#contenido">Saltar al contenido</a>
 
-<!-- ============================================================
-     NAVBAR
-     ============================================================ -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a class="nav__brand" href="#inicio" aria-label="Apollo Dynamics, ir al inicio">
-      <img src="assets/brand/logo-claro.png" alt="Apollo Dynamics" width="800" height="242" fetchpriority="high">
-    </a>
-
-    <nav class="nav__menu" id="nav-menu" aria-label="Navegación principal">
-      <a class="nav__link" href="#servicios">Servicios</a>
-      <a class="nav__link" href="#proceso">Proceso</a>
-      <a class="nav__link" href="#contacto">Contacto</a>
-      <a class="btn btn--primary nav__cta" href="#contacto">Agendar llamada</a>
+<header class="nav-superior" data-nav>
+  <div class="contenedor nav-superior__interior">
+    <a class="nav-superior__marca" href="#inicio" aria-label="Apollo Dynamics, ir al inicio"><img src="assets/marca/isotipo.svg" alt="" width="28" height="28">Apollo Dynamics</a>
+    <nav class="nav-superior__menu" id="menu" aria-label="Navegación principal">
+      <a class="nav-superior__enlace" href="#servicios">Servicios</a>
+      <a class="nav-superior__enlace" href="#metodo">Método</a>
+      <a class="nav-superior__enlace" href="#casos">Casos</a>
+      <a class="nav-superior__enlace" href="#por-dentro">Por dentro</a>
+      <a class="boton boton--primario boton--chico" href="https://wa.me/5492996353269?text=Hola%20Franco%2C%20quiero%20automatizar%20algo%20de%20mi%20negocio" rel="noopener">Hablemos por WhatsApp</a>
     </nav>
-
-    <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-superior__hamburguesa" type="button" aria-expanded="false" aria-controls="menu" data-texto="Menú">Menú</button>
   </div>
 </header>
 
 <main id="contenido">
-
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
-  <section class="hero" id="inicio">
-    <div class="wrap">
-      <p class="eyebrow reveal">Agencia de marketing digital</p>
-      <h1 class="hero__title reveal">Apollo Dynamics</h1>
-      <p class="hero__lead reveal">
-        Ayudamos a marcas y emprendedores a conseguir clientes reales.
-        Campañas, contenido y sitios web que se miden en resultados, no en impresiones.
-      </p>
-      <div class="hero__actions reveal">
-        <a class="btn btn--primary btn--lg" href="#contacto">Agendar una llamada</a>
-        <a class="btn btn--ghost btn--lg" href="#servicios">Ver servicios</a>
+  <!-- ============================ HERO ============================ -->
+  <section class="contenedor hero hero--dos-columnas" id="inicio">
+    <div>
+      <p class="hero__sello">Agencia de IA y automatización · Almagro, Buenos Aires</p>
+      <h1>Sistemas de IA que se pueden <em>ver funcionando.</em></h1>
+      <p class="hero__bajada">Un WhatsApp que saca turnos y toma pedidos solo. Un panel que ordena la gestión. Y cada decisión del agente a la vista: qué hizo, qué validó, cuánto costó. Para PyMEs de Argentina y LatAm que hoy pierden clientes fuera del horario de atención.</p>
+      <div class="fila hero__acciones">
+        <a class="boton boton--primario boton--grande" href="#contacto">Contame qué querés automatizar</a>
+        <a class="boton boton--secundario boton--grande" href="#casos">Ver los casos</a>
       </div>
-
-      <dl class="stats reveal">
-        <div class="stat">
-          <dt>Servicios integrales</dt>
-          <dd><span class="stat__num">3</span></dd>
-        </div>
-        <div class="stat">
-          <dt>Enfoque</dt>
-          <dd><span class="stat__num">100%</span> a medida</dd>
-        </div>
-        <div class="stat">
-          <dt>Primera respuesta</dt>
-          <dd><span class="stat__num">24 h</span></dd>
-        </div>
-      </dl>
+    </div>
+    <div class="hero__numeros" aria-label="Números">
+      <div class="metrica"><span class="metrica__rotulo">Horas por semana sin mostrador que un agente atiende</span><span class="metrica__valor"><em>+100</em><span class="metrica__unidad">de 168</span></span><span class="metrica__fuente">clínica tipo, recepción de 9 a 21 · caso Sanatorio del Plata</span></div>
+      <div class="metrica"><span class="metrica__rotulo">Pruebas automáticas en verde antes de entregar</span><span class="metrica__valor">680</span><span class="metrica__fuente">suma de los cuatro últimos sistemas · verificar.ps1 · septiembre 2026</span></div>
+      <div class="metrica"><span class="metrica__rotulo">Montos que decide el modelo de IA</span><span class="metrica__valor">0</span><span class="metrica__fuente">los precios y totales los calcula siempre la base de datos</span></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       MOSAICO
-       ============================================================ -->
-  <section class="mosaico" aria-label="Galería">
-    <div class="mosaico__grid">
-      <img src="assets/hero/aurora-verde.jpg"     alt="" width="1280" height="720" loading="lazy" class="mosaico__img">
-      <img src="assets/hero/bosque-nocturno.jpg"  alt="" width="1280" height="853" loading="lazy" class="mosaico__img mosaico__img--tall">
-      <img src="assets/hero/via-lactea.jpg"       alt="" width="1280" height="935" loading="lazy" class="mosaico__img">
-      <img src="assets/hero/galaxia.jpg"          alt="" width="1400" height="933" loading="lazy" class="mosaico__img">
-      <img src="assets/hero/auroras.jpg"          alt="" width="1280" height="854" loading="lazy" class="mosaico__img mosaico__img--tall">
-      <img src="assets/hero/luna.jpg"             alt="" width="1280" height="854" loading="lazy" class="mosaico__img">
+  <div class="contenedor"><hr class="regla"></div>
+
+  <!-- ============================ DIFERENCIALES ============================ -->
+  <section class="contenedor seccion" id="diferenciales">
+    <div class="titulo-seccion"><span class="n">1.0</span><h2>Lo que nos distingue de "otro chatbot"</h2><p>No vendemos inteligencia artificial como concepto. Construimos sistemas que hacen un trabajo puntual todos los días, y se puede mirar cómo lo hacen.</p></div>
+    <div class="grilla-auto" style="--min: 300px">
+      <article class="diferencial"><h3>Sistemas reales, no demos</h3><p>Cada proyecto se prueba de punta a punta antes de mostrarlo: conversaciones reales, casos límite, errores a propósito. Las pruebas están escritas para fallar.</p></article>
+      <article class="diferencial"><h3>Con su número, no con promesas</h3><p>Horas de atención recuperadas, mensajes resueltos sin una persona, consultas fuera de horario que antes se perdían. Podés ver el número; no tenés que confiar en nuestra palabra.</p></article>
+      <article class="diferencial"><h3>El criterio se puede explicar</h3><p>Cuando un sistema decide algo, muestra por qué: la frase textual del cliente que lo justifica, la herramienta que llamó, lo que validó la base. Nada de cajas negras.</p></article>
+      <article class="diferencial"><h3>Nunca deja a alguien sin respuesta</h3><p>Si el agente no puede resolver algo, no se queda callado ni inventa: le avisa a una persona del equipo y sigue atendiendo mientras tanto. El cliente no se entera.</p></article>
+      <article class="diferencial"><h3>Seguridad de fábrica</h3><p>Cada rol ve lo suyo: el mostrador no ve lo de la cocina, un cliente no puede tocar la reserva de otro. Pagos y datos de contacto con los cuidados de un banco chico.</p></article>
+      <article class="diferencial"><h3>Se instala sin reescribir</h3><p>Los sistemas grandes se arman para que adaptarlos a un negocio nuevo sea cargar sus datos (horarios, precios, nombre, WhatsApp), no programar de cero. Un proyecto nuevo empieza adelantado.</p></article>
     </div>
   </section>
 
-  <!-- ============================================================
-       SERVICIOS
-       ============================================================ -->
-  <section class="servicios" id="servicios">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <p class="eyebrow">Qué hacemos</p>
-        <h2 class="sec-head__title">Nuestros servicios</h2>
-        <p class="sec-head__lead">
-          Tres frentes que funcionan mejor juntos que por separado: atraer, retener y convertir.
-          Podés contratarlos por separado o como estrategia completa.
-        </p>
-      </header>
+  <!-- ============================ SERVICIOS ============================ -->
+  <section class="contenedor seccion" id="servicios">
+    <div class="titulo-seccion"><span class="n">2.0</span><h2>Servicios</h2><p>Seis cosas que hacemos bien. Explicadas en criollo.</p></div>
+    <div class="grilla-auto" style="--min: 320px">
+      <article class="servicio"><h3>Agentes de atención por WhatsApp</h3><p>Un asistente que contesta el WhatsApp del negocio las 24 horas: responde preguntas frecuentes, saca turnos o toma pedidos, entiende el contexto y sabe cuándo pasar el tema a una persona.</p><p class="para"><b>Para quién:</b> clínicas y consultorios, restaurantes, comercios con pedidos por WhatsApp. Cualquier negocio que hoy pierde consultas fuera de horario.</p></article>
+      <article class="servicio"><h3>Calificación automática de leads</h3><p>Cuando alguien escribe interesado en comprar, el sistema mide qué tan cerca está de decidirse, con un puntaje explicado (frío / tibio / caliente), y dispara el seguimiento correcto solo.</p><p class="para"><b>Para quién:</b> negocios con un equipo de ventas que pierde tiempo revisando conversaciones una por una.</p></article>
+      <article class="servicio"><h3>Automatización de procesos con n8n</h3><p>Conectamos lo que el negocio ya usa (WhatsApp, planillas, bases de datos, Mercado Pago, calendarios) para que recordatorios, avisos, conciliaciones y reportes pasen solos.</p><p class="para"><b>Ya construido:</b> recordatorios de turnos, lectura automática de comprobantes, conciliación de pagos, alertas internas cuando algo falla.</p></article>
+      <article class="servicio"><h3>Paneles de gestión y CRM a medida</h3><p>Una pantalla propia donde el equipo ve todo lo que pasa: turnos del día, pedidos, conversaciones, métricas. Con permisos distintos por rol.</p><p class="para"><b>Para quién:</b> negocios que hoy gestionan todo por WhatsApp personal, planillas sueltas o cuadernos.</p></article>
+      <article class="servicio"><h3>Sitios web y landings a medida</h3><p>Páginas hechas a mano, sin plantillas de constructor: livianas, rápidas, bien en el celular, con botón de WhatsApp y formularios que funcionan. Cada pantalla pasa una auditoría automática antes de publicarse.</p><p class="para"><b>Para quién:</b> negocios que necesitan presencia digital seria sin pagar de más por un sitio pesado.</p></article>
+      <article class="servicio"><h3>Consultoría y QA de sistemas automatizados</h3><p>Revisamos automatizaciones o agentes que un negocio ya tiene, propios o de otro proveedor, para encontrar dónde fallan antes de que lo note un cliente: respuestas incorrectas, huecos de seguridad, procesos que se rompen en silencio.</p><p class="para"><b>Para quién:</b> negocios o agencias que ya automatizaron algo pero no confían del todo en que esté bien hecho.</p></article>
+    </div>
+  </section>
 
-      <!-- Cada tarjeta alterna de lado via :nth-child en el CSS -->
-      <article class="servicio reveal" style="--svc: var(--svc-violet)">
-        <div class="servicio__card">
-          <p class="servicio__kicker">Generación de leads</p>
-          <h3 class="servicio__title">Marketing digital</h3>
-          <p class="servicio__text">
-            Campañas en Meta Ads y Google pensadas para traer consultas, no likes.
-            Segmentación afinada, creatividades que frenan el scroll y reportes donde
-            se ve exactamente cuánto costó cada cliente nuevo.
-          </p>
-          <ul class="servicio__list">
-            <li>Meta Ads y Google Ads</li>
-            <li>Segmentación y públicos</li>
-            <li>Reportes de costo por lead</li>
-          </ul>
-          <a class="servicio__cta" href="#contacto" data-servicio="Marketing digital">
-            Quiero este servicio <span aria-hidden="true">→</span>
-          </a>
-        </div>
-        <div class="servicio__media">
-          <img src="assets/servicios/digital-marketing.jpg" alt="Ilustración de una campaña de marketing digital en múltiples dispositivos" width="1200" height="800" loading="lazy">
-        </div>
+  <!-- ============================ MÉTODO ============================ -->
+  <section class="contenedor seccion" id="metodo">
+    <div class="titulo-seccion"><span class="n">3.0</span><h2>Cómo trabajamos</h2><p>Por fases, y cada fase termina en algo que se puede probar funcionando. El criterio de listo se escribe antes de empezar.</p></div>
+    <ol class="pasos">
+      <li><h3>Diagnóstico</h3><p>Entendemos el proceso real del negocio: no lo que debería pasar, sino lo que pasa hoy. Dónde se pierden clientes, qué tareas comen más tiempo.</p></li>
+      <li><h3>Diseño por fases</h3><p>Etapas chicas y demostrables. Cada una con su criterio de listo escrito, del estilo "se abre desde el celular y un plato agotado se tacha sin refrescar".</p></li>
+      <li><h3>Construcción con pruebas reales</h3><p>Casos límite a propósito: preguntas fuera de tema, intentos de romperlo, situaciones delicadas. Si una prueba no puede fallar, no sirve.</p></li>
+      <li><h3>Medición</h3><p>El sistema se entrega con sus métricas: cuántas conversaciones resolvió solo, cuánto tiempo ahorró, cuánta atención hubo fuera de horario.</p></li>
+      <li><h3>Instalación simple</h3><p>Si es una plantilla reutilizable, llevarlo a un cliente nuevo es cargar los datos de su negocio. Un solo archivo de configuración.</p></li>
+      <li><h3>Acompañamiento</h3><p>Manuales para cada persona que va a usar el sistema (uno para quien lo opera, uno para quien lo compra) y una guía de fallas que dice qué hacer cuando algo pasa.</p></li>
+    </ol>
+  </section>
+
+  <!-- ============================ CASOS ============================ -->
+  <section class="contenedor seccion" id="casos">
+    <div class="titulo-seccion"><span class="n">4.0</span><h2>Casos</h2><p>Sistemas completos, con sus pruebas y sus números.</p></div>
+    <p class="aviso-honesto"><strong>Con honestidad:</strong> estos casos los construyó la agencia como demostración de capacidad, con negocios y datos ficticios creados para el ejercicio. No son clientes reales todavía. Lo que sí es real es el sistema: se puede probar funcionando, y las pruebas están escritas para fallar.</p>
+    <div class="grilla-auto" style="--min: 320px">
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Sanatorio del Plata</h3><span class="caso__sector">clínica · turnos por WhatsApp</span></div>
+        <p class="caso__numero">+100<small>horas por semana de mostrador cerrado que la recepcionista virtual atiende</small></p>
+        <ul class="caso__lista"><li>Saca turnos según la disponibilidad real de cada médico; responde sobre obras sociales y estudios.</li><li>Reconoce una urgencia y manda a la guardia en vez de sacar turno.</li><li>Lee comprobantes de pago en foto, manda recordatorios, y un CRM para la recepción.</li><li>Ocho workflows, un solo archivo de configuración para instalarlo en otra clínica.</li></ul>
+        <div class="caso__pie"><span class="badge badge--ok">terminado y documentado</span><span class="chico secundario">n8n · Gemini · WhatsApp Cloud API</span></div>
       </article>
-
-      <article class="servicio reveal" style="--svc: var(--svc-amber)">
-        <div class="servicio__card">
-          <p class="servicio__kicker">Desarrollo de marca</p>
-          <h3 class="servicio__title">Gestión de contenido</h3>
-          <p class="servicio__text">
-            Creamos, organizamos y optimizamos el contenido de tus canales para que tu marca
-            tenga algo que decir todas las semanas. Calendario, producción y publicación:
-            tu plataforma siempre fresca y relevante.
-          </p>
-          <ul class="servicio__list">
-            <li>Calendario editorial</li>
-            <li>Producción de piezas</li>
-            <li>Community management</li>
-          </ul>
-          <a class="servicio__cta" href="#contacto" data-servicio="Gestión de contenido">
-            Quiero este servicio <span aria-hidden="true">→</span>
-          </a>
-        </div>
-        <div class="servicio__media">
-          <img src="assets/servicios/content-management.jpg" alt="Ilustración de un equipo organizando contenido en un panel digital" width="1200" height="800" loading="lazy">
-        </div>
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Pastas La Sfoglia</h3><span class="caso__sector">gastronomía · pedidos y reservas</span></div>
+        <p class="caso__numero">151<small>pruebas automáticas en verde contra la base, antes de cada entrega</small></p>
+        <ul class="caso__lista"><li>Toma pedidos para retirar y reservas de mesa; conoce la carta y lo agotado en tiempo real.</li><li>Jamás ofrece un plato que no hay; el total lo calcula la base, nunca el modelo.</li><li>Carta pública que se actualiza sola, panel con tres roles, cobro con Mercado Pago.</li></ul>
+        <div class="caso__pie"><span class="badge badge--aviso">en desarrollo · fase 7 de 10</span><span class="chico secundario">n8n · Supabase · Mercado Pago</span></div>
       </article>
-
-      <article class="servicio reveal" style="--svc: var(--svc-terra)">
-        <div class="servicio__card">
-          <p class="servicio__kicker">Presencia online</p>
-          <h3 class="servicio__title">Diseño web</h3>
-          <p class="servicio__text">
-            Sitios rápidos, claros y pensados para convertir. Desde la idea hasta la
-            implementación, construimos experiencias que reflejan tu marca y guían al
-            visitante hacia la acción que te importa.
-          </p>
-          <ul class="servicio__list">
-            <li>Diseño a medida</li>
-            <li>Optimización de velocidad</li>
-            <li>Responsive y accesible</li>
-          </ul>
-          <a class="servicio__cta" href="#contacto" data-servicio="Diseño web">
-            Quiero este servicio <span aria-hidden="true">→</span>
-          </a>
-        </div>
-        <div class="servicio__media">
-          <img src="assets/servicios/web-design.jpg" alt="Ilustración del proceso de diseño de una interfaz web" width="1200" height="800" loading="lazy">
-        </div>
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Frío Sur</h3><span class="caso__sector">servicio técnico · refrigeración</span></div>
+        <p class="caso__numero">1.848<small>comparaciones entre el motor de SLA en SQL y su espejo en JavaScript, todas iguales</small></p>
+        <ul class="caso__lista"><li>Motor de SLA en horario hábil, con feriados y pausas que detienen el reloj.</li><li>App del técnico que funciona sin señal y sincroniza sola, sin duplicar remitos.</li><li>Sin chatbot en el centro, a propósito: la IA ayuda, el motor decide.</li></ul>
+        <div class="caso__pie"><span class="badge badge--ok">motor construido y verificado</span><span class="chico secundario">Postgres · PWA offline</span></div>
+      </article>
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Distribuidora Sáenz</h3><span class="caso__sector">mayorista · cobranzas</span></div>
+        <p class="caso__numero">124<small>pruebas SQL, once de ellas recalculan los saldos desde cero después de mover plata de todas las formas</small></p>
+        <ul class="caso__lista"><li>Cuenta corriente, imputación de pagos y conciliación bancaria automática.</li><li>El matcher guarda por qué cruzó cada movimiento.</li><li>Punitorios truncados a centavos, escalera de cobranza que no manda dos veces.</li></ul>
+        <div class="caso__pie"><span class="badge badge--ok">motor construido y verificado</span><span class="chico secundario">Postgres · n8n</span></div>
+      </article>
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Voltra Nimbus</h3><span class="caso__sector">landing · calificación de leads</span></div>
+        <p class="caso__numero">3<small>niveles de interés (frío, tibio, caliente), cada uno con la frase del cliente que lo justifica</small></p>
+        <ul class="caso__lista"><li>Landing de un producto con un asistente que responde dudas y objeciones.</li><li>Cuando detecta intención de compra, pide el contacto y lo califica con un puntaje explicado.</li><li>Dispara el seguimiento correcto solo; un panel muestra cómo subió el interés turno a turno.</li></ul>
+        <div class="caso__pie"><span class="badge badge--aviso">en desarrollo</span><span class="chico secundario">Node · SQLite · Gemini</span></div>
+      </article>
+      <article class="panel caso">
+        <div class="caso__cabecera"><h3>Toba Cars</h3><span class="caso__sector">concesionaria · landing</span></div>
+        <p class="caso__numero">0<small>plantillas de constructor: hecho a mano, accesible con teclado y lector de pantalla</small></p>
+        <ul class="caso__lista"><li>Catálogo filtrable por tipo de vehículo.</li><li>WhatsApp en cada punto de contacto.</li><li>Rápido en cualquier celular.</li></ul>
+        <div class="caso__pie"><span class="badge">sitio</span><span class="chico secundario">HTML · CSS · JS</span></div>
       </article>
     </div>
   </section>
 
-  <!-- ============================================================
-       PROCESO
-       ============================================================ -->
-  <section class="proceso" id="proceso">
-    <div class="wrap">
-      <header class="sec-head reveal">
-        <p class="eyebrow">Cómo trabajamos</p>
-        <h2 class="sec-head__title">Un método, no una corazonada</h2>
-        <p class="sec-head__lead">
-          Cuatro etapas claras. Sabés en todo momento en qué estamos y qué sigue.
-        </p>
-      </header>
-
-      <ol class="pasos">
-        <li class="paso reveal">
-          <span class="paso__num">01</span>
-          <h3 class="paso__title">Diagnóstico</h3>
-          <p class="paso__text">Analizamos tu situación actual, tu competencia y a quién le estás hablando. Sin esto, todo lo demás es adivinar.</p>
-        </li>
-        <li class="paso reveal">
-          <span class="paso__num">02</span>
-          <h3 class="paso__title">Estrategia</h3>
-          <p class="paso__text">Definimos objetivos medibles, canales y presupuesto. Te presentamos el plan antes de gastar un peso.</p>
-        </li>
-        <li class="paso reveal">
-          <span class="paso__num">03</span>
-          <h3 class="paso__title">Ejecución</h3>
-          <p class="paso__text">Producimos, lanzamos y ajustamos. Trabajamos en ciclos cortos para corregir rápido lo que no funciona.</p>
-        </li>
-        <li class="paso reveal">
-          <span class="paso__num">04</span>
-          <h3 class="paso__title">Medición</h3>
-          <p class="paso__text">Reportes claros con las métricas que importan. Si algo no rinde, lo cambiamos y te explicamos por qué.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACTO
-       ============================================================ -->
-  <section class="contacto" id="contacto">
-    <div class="wrap">
-      <div class="contacto__box reveal">
-        <div class="contacto__intro">
-          <h2 class="contacto__title">Trabajemos juntos</h2>
-          <p class="contacto__lead">
-            Contanos en qué estás y coordinamos una llamada para conocernos.
-            Te respondemos dentro de las 24 horas hábiles, sin compromiso.
-          </p>
-        </div>
-
-        <form class="form" id="form-contacto" novalidate>
-          <input type="hidden" name="_subject" value="Nueva consulta desde la web de Apollo Dynamics">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <!-- Honeypot antispam: invisible para personas, tentador para bots.
-               FormSubmit descarta cualquier envio que complete este campo. -->
-          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="form__row">
-            <div class="field">
-              <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Cómo te llamás">
-              <p class="field__error" data-error-for="nombre"></p>
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@email.com">
-              <p class="field__error" data-error-for="email"></p>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="servicio">Servicio que te interesa</label>
-            <select id="servicio" name="servicio">
-              <option value="">Todavía no lo tengo claro</option>
-              <option>Marketing digital</option>
-              <option>Gestión de contenido</option>
-              <option>Diseño web</option>
-              <option>Estrategia completa</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Contanos brevemente sobre tu proyecto y qué querés lograr."></textarea>
-            <p class="field__error" data-error-for="mensaje"></p>
-          </div>
-
-          <div class="form__foot">
-            <button type="submit" class="btn btn--primary btn--lg" id="submit-btn">Enviar consulta</button>
-            
-            <a class="btn btn--ghost btn--lg" href="https://wa.me/5492996353269?text=Hola%20Apollo%20Dynamics%2C%20quiero%20consultar%20por%20sus%20servicios." target="_blank" rel="noopener">
-              Escribir por WhatsApp
-            </a>
-          </div>
-
-          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
+  <!-- ============================ POR DENTRO ============================ -->
+  <section class="contenedor seccion" id="por-dentro">
+    <div class="titulo-seccion"><span class="n">5.0</span><h2>Podés ver lo que hace por dentro</h2><p>Así se ve una conversación real con uno de nuestros agentes, y lo que pasó del otro lado mientras contestaba. Cada paso con su latencia. El precio lo puso la base, no el modelo.</p></div>
+    <div class="por-dentro">
+      <div class="chat" aria-label="Ejemplo de conversación">
+        <div class="chat__burbuja chat__burbuja--usuario"><p>Hola! Hay cancha para el jueves a las 21?</p><time class="chat__meta">21:14:02</time></div>
+        <div class="chat__burbuja chat__burbuja--agente"><p>Sí, tengo F5-A y F7 libres el jueves 18 a las 21:00. La F5 sale $ 24.000 la hora; la F7, $ 36.000. ¿Cuál te sirve?</p><time class="chat__meta">21:14:04 · 1.320 ms · 2 herramientas</time></div>
+        <div class="chat__burbuja chat__burbuja--usuario"><p>La F5. Somos 12 igual</p><time class="chat__meta">21:14:31</time></div>
+        <div class="chat__burbuja chat__burbuja--agente"><p>Dale, F5-A el jueves a las 21:00. Para 12 te conviene la F7, pero te la dejo como pediste. Te paso el link de la seña ($ 6.000); con eso queda confirmada.</p><time class="chat__meta">21:14:33 · 980 ms · 2 herramientas</time></div>
+      </div>
+      <div class="panel tarjeta tema-consola">
+        <p class="chico secundario" style="margin: 0 0 var(--e3)">Lo que pasó del otro lado</p>
+        <ol class="traza" aria-label="Traza de la conversación">
+          <li class="traza__paso traza__paso--ok"><span class="traza__punto"></span><span class="traza__nombre">Mensaje recibido<span class="traza__detalle">WhatsApp · +54 9 11 •••• 4421</span></span><span class="traza__ms">0 ms</span></li>
+          <li class="traza__paso traza__paso--ok"><span class="traza__punto"></span><span class="traza__nombre">El modelo decide llamar <code>ver_disponibilidad</code><span class="traza__detalle">412 tokens · decide cuándo, no qué</span></span><span class="traza__ms">640 ms</span></li>
+          <li class="traza__paso traza__paso--ok"><span class="traza__punto"></span><span class="traza__nombre">La base valida y contesta<span class="traza__detalle">2 canchas libres · función SQL, no el prompt</span></span><span class="traza__ms">38 ms</span></li>
+          <li class="traza__paso traza__paso--ok"><span class="traza__punto"></span><span class="traza__nombre">Llama <code>precios</code><span class="traza__detalle">$ 24.000 y $ 36.000 salen de la tabla, no del modelo</span></span><span class="traza__ms">22 ms</span></li>
+          <li class="traza__paso traza__paso--aviso"><span class="traza__punto"></span><span class="traza__nombre">Reserva para 12 en F5<span class="traza__detalle">avisa, no bloquea: la decisión es del cliente</span></span><span class="traza__ms">15 ms</span></li>
+          <li class="traza__paso traza__paso--ok"><span class="traza__punto"></span><span class="traza__nombre">Llama <code>generar_link_pago</code><span class="traza__detalle">recibe el id de la reserva; el monto lo lee la base</span></span><span class="traza__ms">310 ms</span></li>
+        </ol>
+        <p class="chico secundario" style="margin: var(--e4) 0 0">Complejo La Redonda es un caso ficticio. La traza es la que registra el sistema, fila por fila, con su costo.</p>
       </div>
     </div>
   </section>
 
+  <!-- ============================ CONTACTO ============================ -->
+  <section class="contenedor seccion" id="contacto">
+    <div class="titulo-seccion"><span class="n">6.0</span><h2>Empecemos por el dolor</h2><p>Una charla corta para entender dónde se pierden clientes, tiempo o gestión. Después, una propuesta con fases y criterio de listo, sin letra chica.</p></div>
+    <div class="contacto">
+      <div>
+        <div class="contacto__canal"><span class="chico secundario">WhatsApp, el canal principal</span><a class="dato" href="https://wa.me/5492996353269?text=Hola%20Franco%2C%20quiero%20automatizar%20algo%20de%20mi%20negocio" rel="noopener">+54 9 299 635-3269</a></div>
+        <div class="contacto__canal"><span class="chico secundario">Email</span><a class="dato" href="mailto:francoivanalmada@gmail.com">francoivanalmada@gmail.com</a></div>
+        <div class="contacto__canal"><span class="chico secundario">Dónde</span><span>Almagro, Buenos Aires. Trabajamos con toda Argentina y LatAm.</span></div>
+        <div class="contacto__canal"><span class="chico secundario">Quién</span><span>Franco Almada, fundador. Developer y QA. Estudia Tecnología Digital en la UTDT.</span></div>
+      </div>
+      <form class="panel tarjeta pila" id="formulario" method="post" action="https://formsubmit.co/francoivanalmada@gmail.com" novalidate>
+        <input type="hidden" name="_subject" value="Nueva consulta desde la web de Apollo Dynamics">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="trampa-bots" aria-hidden="true"><label for="sitio-web">No completar</label><input id="sitio-web" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="campo"><label class="campo__rotulo" for="nombre">Nombre</label><input class="campo__control" id="nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="nombre-error"><span class="campo__error" id="nombre-error">Decinos cómo te llamás.</span></div>
+        <div class="campo"><label class="campo__rotulo" for="negocio">Negocio <span class="opcional">(opcional)</span></label><input class="campo__control" id="negocio" name="negocio" type="text" autocomplete="organization"></div>
+        <div class="campo"><label class="campo__rotulo" for="whatsapp">WhatsApp</label><input class="campo__control" id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+54 9 11 1234-5678" required aria-describedby="whatsapp-ayuda whatsapp-error"><span class="campo__ayuda" id="whatsapp-ayuda">Te contestamos por ahí, en el día.</span><span class="campo__error" id="whatsapp-error">Falta el WhatsApp, con código de área.</span></div>
+        <div class="campo"><label class="campo__rotulo" for="mensaje">Qué te gustaría automatizar</label><textarea class="campo__control" id="mensaje" name="mensaje" required aria-describedby="mensaje-error" placeholder="Hoy contesto el WhatsApp yo, a cualquier hora, y se me pierden consultas…"></textarea><span class="campo__error" id="mensaje-error">Contanos aunque sea en una línea.</span></div>
+        <div class="fila fila--entre"><span class="chico secundario">Sin spam. Sin newsletter.</span><button class="boton boton--primario" type="submit">Enviar la consulta</button></div>
+        <div class="estado estado--cargando" id="form-cargando" hidden aria-busy="true"><span class="estado__marca" aria-hidden="true"></span><p class="estado__titulo">Enviando</p></div>
+        <div class="estado estado--vacio" id="form-ok" hidden role="status"><span class="estado__marca" aria-hidden="true"></span><p class="estado__titulo">Llegó. Te escribimos en el día.</p><p class="estado__texto">Si es urgente, el WhatsApp de arriba es más rápido.</p></div>
+        <div class="estado estado--error" id="form-error" hidden role="alert"><span class="estado__marca" aria-hidden="true"></span><p class="estado__titulo">No se pudo enviar</p><p class="estado__texto" id="form-error-texto">Escribinos directo por WhatsApp mientras lo arreglamos.</p><a class="boton boton--primario boton--chico estado__accion" href="https://wa.me/5492996353269" rel="noopener">Abrir WhatsApp</a></div>
+      </form>
+    </div>
+  </section>
 </main>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <img class="footer__logo" src="assets/brand/logo-oscuro.png" alt="Apollo Dynamics" width="800" height="202" loading="lazy">
-    <p class="footer__text">
-      Apollo Dynamics es una agencia de marketing dedicada a impulsar marcas y emprendedores.
-      Estrategia, creatividad y resultados concretos. Escribinos y hagamos crecer tu negocio.
-    </p>
-    <nav class="footer__links" aria-label="Servicios">
-      <a href="#servicios">Marketing digital</a>
-      <a href="#servicios">Gestión de contenido</a>
-      <a href="#servicios">Diseño web</a>
-    </nav>
-    <p class="footer__legal">
-      
-      <a href="mailto:francoivanalmada@gmail.com">francoivanalmada@gmail.com</a>
-      <span aria-hidden="true">·</span>
-      Buenos Aires, Argentina
-      <span aria-hidden="true">·</span>
-      © <span id="anio">2026</span> Apollo Dynamics
-    </p>
+<footer class="pie-sitio">
+  <div class="contenedor">
+    <div class="pie-sitio__columnas">
+      <div><img src="assets/marca/logotipo.svg" alt="Apollo Dynamics" width="200" height="39" class="pie-sitio__logo"><p style="margin-top: var(--e3)">Agencia boutique de IA y automatización para PyMEs de Argentina y LatAm. Sistemas reales, con su número.</p></div>
+      <div><p class="pie-sitio__rotulo">Secciones</p><ul><li><a href="#servicios">Servicios</a></li><li><a href="#metodo">Método</a></li><li><a href="#casos">Casos</a></li><li><a href="#por-dentro">Por dentro</a></li></ul></div>
+      <div><p class="pie-sitio__rotulo">Contacto</p><ul><li><a href="https://wa.me/5492996353269" rel="noopener">WhatsApp</a></li><li><a href="mailto:francoivanalmada@gmail.com">Email</a></li><li><a href="https://github.com/FrancoAlmada" rel="noopener">GitHub</a></li></ul></div>
+      <div><p class="pie-sitio__rotulo">Tres frases</p><ul><li>Podés ver lo que hace por dentro.</li><li>Cada sistema tiene su número.</li><li>Las pruebas están escritas para fallar.</li></ul></div>
+    </div>
+    <div class="pie-sitio__legal"><span>© 2026 Apollo Dynamics · Almagro, Buenos Aires</span><span class="dato">esta página pasó Prevuelo antes de publicarse</span></div>
   </div>
 </footer>
 
-<!-- Boton flotante de WhatsApp -->
-
-<a class="wa" href="https://wa.me/5492996353269?text=Hola%20Apollo%20Dynamics%2C%20quiero%20consultar%20por%20sus%20servicios." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
-  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
-    <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
-    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23a8.18 8.18 0 0 1 5.82 2.41 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/>
-  </svg>
-</a>
-
-<script src="js/main.js"></script>
+<script type="module" src="css/orbita/orbita.js"></script>
+<script type="module" src="js/sitio.js"></script>
 </body>
 </html>

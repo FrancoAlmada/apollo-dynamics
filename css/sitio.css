@@ -1,0 +1,72 @@
+/* =============================================================================
+   css/sitio.css — lo propio de la web de Apollo Dynamics.
+   =============================================================================
+   Va después de css/orbita/*.css (COPIAS generadas desde HANGAR: no se editan acá). Este
+   archivo solo dispone: hero, servicios, método, casos, "por dentro" y contacto. Ningún color
+   ni medida escrito a mano: todo var(--…) de tokens.css. Prevuelo lo revisa antes de publicar.
+   ============================================================================= */
+
+/* --- Hero --------------------------------------------------------------------- */
+.hero { padding-block: var(--e8); }
+@media (min-width: 720px) { .hero { padding-block: var(--e10) var(--e8); } }
+.hero__sello { font-family: var(--fuente-dato); font-size: var(--t-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--acento-texto); }
+.hero h1 { font-size: var(--t-5xl); max-width: 14ch; margin-top: var(--e3); }
+.hero h1 em { font-style: normal; color: var(--acento-texto); }
+.hero__bajada { font-size: var(--t-lg); color: var(--tinta-media); max-width: 50ch; margin-top: var(--e5); }
+.hero__acciones { margin-top: var(--e6); }
+.hero__numeros { margin-top: var(--e8); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e3); }
+@media (min-width: 1000px) {
+  .hero--dos-columnas { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--e10); align-items: start; }
+  .hero__numeros { margin-top: var(--e4); }
+}
+
+/* --- Títulos de sección numerados --------------------------------------------- */
+.titulo-seccion { display: grid; gap: var(--e2); margin-bottom: var(--e6); }
+.titulo-seccion .n { font-family: var(--fuente-dato); font-size: var(--t-sm); color: var(--acento-texto); letter-spacing: 0.04em; }
+.titulo-seccion h2 { max-width: 24ch; }
+.titulo-seccion p { color: var(--tinta-media); font-size: var(--t-lg); max-width: 56ch; margin: 0; }
+
+/* --- Diferenciales y servicios ------------------------------------------------- */
+.diferencial { display: grid; gap: var(--e2); padding: var(--e5) 0; border-top: 1px solid var(--linea-fuerte); }
+.diferencial h3 { font-size: var(--t-xl); }
+.diferencial p { font-size: var(--t-sm); color: var(--tinta-media); margin: 0; }
+
+.servicio { display: grid; gap: var(--e2); padding: var(--e5); border-top: 2px solid var(--tinta); align-content: start; }
+.servicio h3 { font-size: var(--t-xl); }
+.servicio p { margin: 0; }
+.servicio .para { font-size: var(--t-sm); color: var(--tinta-media); }
+.servicio .para b { color: var(--tinta); font-weight: 600; }
+
+/* --- Método -------------------------------------------------------------------- */
+.pasos { counter-reset: paso; list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e4); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .pasos { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+.pasos li { counter-increment: paso; display: grid; gap: var(--e2); padding-top: var(--e4); border-top: 1px solid var(--linea-fuerte); align-content: start; }
+.pasos li::before { content: counter(paso, decimal-leading-zero); font-family: var(--fuente-dato); font-size: var(--t-sm); color: var(--acento-texto); }
+.pasos h3 { font-size: var(--t-lg); }
+.pasos p { font-size: var(--t-sm); color: var(--tinta-media); margin: 0; }
+
+/* --- Casos ---------------------------------------------------------------------- */
+.aviso-honesto { font-size: var(--t-sm); color: var(--tinta); border-left: 3px solid var(--acento); padding: var(--e3) var(--e4); background: var(--acento-tenue); max-width: none; margin-bottom: var(--e6); }
+.caso { display: grid; gap: var(--e4); padding: var(--e5); align-content: start; }
+.caso__cabecera { display: flex; flex-wrap: wrap; gap: var(--e2) var(--e3); align-items: baseline; justify-content: space-between; }
+.caso__cabecera h3 { font-size: var(--t-xl); }
+.caso__sector { font-family: var(--fuente-dato); font-size: var(--t-xs); color: var(--tinta-media); }
+.caso__numero { font-family: var(--fuente-dato); font-variant-numeric: tabular-nums; font-size: var(--t-3xl); font-weight: 600; line-height: 1; margin: 0; max-width: none; }
+.caso__numero small { font-family: var(--fuente-cuerpo); font-size: var(--t-sm); font-weight: 400; color: var(--tinta-media); display: block; margin-top: var(--e2); line-height: 1.45; }
+.caso__lista { margin: 0; padding-left: 1.2em; font-size: var(--t-sm); color: var(--tinta-media); display: grid; gap: var(--e1); }
+.caso__pie { display: flex; flex-wrap: wrap; gap: var(--e2) var(--e3); align-items: center; justify-content: space-between; padding-top: var(--e3); border-top: 1px solid var(--linea); margin-top: auto; }
+
+/* --- Por dentro ------------------------------------------------------------------ */
+.por-dentro { display: grid; gap: var(--e5); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .por-dentro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+/* --- Contacto ---------------------------------------------------------------------- */
+.contacto { display: grid; gap: var(--e8); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .contacto { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
+.contacto__canal { display: grid; gap: var(--e1); padding: var(--e4) 0; border-top: 1px solid var(--linea); }
+.contacto__canal .dato { font-size: var(--t-lg); overflow-wrap: anywhere; }
+/* El honeypot: fuera de la vista y del orden de tabulación, pero presente para los bots. */
+.trampa-bots { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* --- Pie --------------------------------------------------------------------------- */
+.pie-sitio__logo { width: 200px; height: auto; }

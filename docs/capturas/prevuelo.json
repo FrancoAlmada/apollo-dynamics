@@ -1,0 +1,61 @@
+{
+  "_generado": "GENERADO por prevuelo/prevuelo.mjs",
+  "objetivo": "../PROYECTOS/apollo-dynamics/index.html",
+  "corrido_en": "2026-09-14T18:00:00.502Z",
+  "anchos": [
+    360,
+    390,
+    768,
+    1440
+  ],
+  "veredicto": "verde",
+  "rojos": 0,
+  "avisos": 0,
+  "medidas": {
+    "contraste_360": {
+      "textos": 205,
+      "fallas": 0
+    },
+    "foco_360": {
+      "enfocados": 19,
+      "sin_indicador": 0,
+      "trampa": null
+    },
+    "contraste_390": {
+      "textos": 205,
+      "fallas": 0
+    },
+    "contraste_768": {
+      "textos": 205,
+      "fallas": 0
+    },
+    "contraste_1440": {
+      "textos": 209,
+      "fallas": 0
+    },
+    "foco_1440": {
+      "enfocados": 23,
+      "sin_indicador": 0,
+      "trampa": null
+    },
+    "lighthouse_mobile": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lighthouse_desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    }
+  },
+  "hallazgos": [],
+  "capturas": [
+    "apollo-dynamics-index-360.png",
+    "apollo-dynamics-index-390.png",
+    "apollo-dynamics-index-768.png",
+    "apollo-dynamics-index-1440.png"
+  ]
+}

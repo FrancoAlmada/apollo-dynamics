@@ -10,3 +10,6 @@ desktop.ini
 
 # Capturas de verificación
 shot-*.png
+
+# Temporales de Prevuelo
+.tmp/
