@@ -272,7 +272,7 @@ textarea.campo__control { min-height: 6em; resize: vertical; }
   display: grid; justify-items: center; text-align: center; gap: var(--e2);
   padding: var(--e8) var(--e5); border: 1px dashed var(--linea-fuerte); border-radius: var(--r-panel);
 }
-.estado__titulo { font-family: var(--fuente-display); font-weight: 700; font-size: var(--t-lg); }
+.estado__titulo { font-family: var(--fuente-display); font-weight: var(--peso-display); font-size: var(--t-lg); }
 .estado__texto { color: var(--tinta-media); font-size: var(--t-sm); max-width: 38ch; margin: 0; }
 .estado__accion { margin-top: var(--e2); }
 .estado--vacio .estado__marca { width: 40px; height: 40px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--r-medio); }
@@ -294,7 +294,7 @@ textarea.campo__control { min-height: 6em; resize: vertical; }
   border-bottom: 1px solid var(--linea);
 }
 .nav-superior__interior { display: flex; align-items: center; gap: var(--e4); min-height: 60px; }
-.nav-superior__marca { display: flex; align-items: center; gap: var(--e3); color: var(--tinta); text-decoration: none; font-family: var(--fuente-display); font-weight: 700; white-space: nowrap; }
+.nav-superior__marca { display: flex; align-items: center; gap: var(--e3); color: var(--tinta); text-decoration: none; font-family: var(--fuente-display); font-weight: var(--peso-display); white-space: nowrap; }
 .nav-superior__marca img { width: 28px; height: 28px; }
 .nav-superior__menu { display: none; margin-left: auto; gap: var(--e1); align-items: center; }
 .nav-superior__enlace { color: var(--tinta-media); text-decoration: none; font-size: var(--t-sm); font-weight: 500; padding: var(--e2) var(--e3); border-radius: var(--r-medio); }

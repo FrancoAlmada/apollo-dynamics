@@ -27,16 +27,19 @@ body {
 /* --- Tipografía: tres roles, nunca mezclados ------------------------------- */
 h1, h2, h3, h4, .display {
   font-family: var(--fuente-display);
-  font-weight: 700;
+  font-weight: var(--peso-display);
   letter-spacing: var(--interletrado-display);
   line-height: var(--interlineado-display);
   margin: 0;
   text-wrap: balance;
+  /* Red de seguridad: si una palabra sola es más ancha que la columna, se parte antes de
+     empujar la página de costado. La escala fluida ya baja para que no pase; esto es por si pasa. */
+  overflow-wrap: break-word;
 }
 h1 { font-size: var(--t-4xl); }
 h2 { font-size: var(--t-3xl); }
 h3 { font-size: var(--t-2xl); }
-h4 { font-size: var(--t-xl); font-weight: 500; }
+h4 { font-size: var(--t-xl); }
 
 p, li { max-width: var(--ancho-lectura); }
 p { margin: 0 0 var(--e4); }

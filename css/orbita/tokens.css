@@ -6,45 +6,49 @@
    3) [data-theme=dark] -> consola, para que el interruptor gane en los dos sentidos */
 
 :root {
-  color-scheme: light;
-  /* --- color: tema claro (papel técnico) --- */
-  --papel: #f4f3ef;
-  --papel-alto: #ffffff;
-  --papel-hundido: #ebeae7;
-  --tinta: #10151c;
-  --tinta-media: #606366;
-  --tinta-suave: #87888a;
-  --linea: rgba(16, 21, 28, 0.14);
-  --linea-fuerte: rgba(16, 21, 28, 0.3);
-  --acento: #ff5a1f;
-  --acento-fuerte: #de501f;
-  --acento-texto: #b23808;
-  --acento-tenue: rgba(255, 90, 31, 0.06);
-  --acento-linea: rgba(255, 90, 31, 0.45);
-  --sobre-acento: #10151c;
-  --ok: #2d6a4a;
-  --ok-tenue: rgba(45, 106, 74, 0.08);
-  --rechazo: #a8391f;
-  --rechazo-tenue: rgba(168, 57, 31, 0.08);
-  --aviso: #855600;
-  --aviso-tenue: rgba(133, 86, 0, 0.08);
-  --velo: rgba(16, 21, 28, 0.55);
-  --sombra-panel: 0 1px 2px rgba(16, 21, 28, 0.06), 0 12px 28px -22px rgba(16, 21, 28, 0.45);
-  --sombra-flotante: 0 2px 6px rgba(16, 21, 28, 0.08), 0 24px 48px -20px rgba(16, 21, 28, 0.35);
+  color-scheme: dark;
+  /* --- color: tema principal (consola) --- */
+  --papel: #0e0f0e;
+  --papel-alto: #1a1a19;
+  --papel-hundido: #0a0a0a;
+  --tinta: #f5f4f1;
+  --tinta-media: #9d9d9b;
+  --tinta-suave: #767674;
+  --linea: rgba(245, 244, 241, 0.14);
+  --linea-fuerte: rgba(245, 244, 241, 0.3);
+  --acento: #3fbe94;
+  --acento-fuerte: #58c6a1;
+  --acento-texto: #3fbe94;
+  --acento-tenue: rgba(63, 190, 148, 0.08);
+  --acento-linea: rgba(63, 190, 148, 0.45);
+  --sobre-acento: #121312;
+  --ok: #66c9a4;
+  --ok-tenue: rgba(102, 201, 164, 0.08);
+  --rechazo: #f17860;
+  --rechazo-tenue: rgba(241, 120, 96, 0.08);
+  --aviso: #ffc65b;
+  --aviso-tenue: rgba(255, 198, 91, 0.08);
+  --extra: #a974eb;
+  --velo: rgba(18, 19, 18, 0.55);
+  --sombra-panel: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --sombra-flotante: 0 30px 70px rgba(0, 0, 0, 0.55);
   /* --- fijos: para mostrar el logo o un panel siempre sobre el mismo fondo, sin importar el tema --- */
-  --papel-claro-fijo: #f4f3ef;
-  --tinta-claro-fijo: #10151c;
-  --papel-consola-fijo: #0e1116;
-  --tinta-consola-fijo: #e9ebe6;
-  --tinta-media-consola-fija: #9c9f9d;
-  --tinta-suave-consola-fija: #777a7a;
+  --papel-claro-fijo: #f5f4f1;
+  --tinta-claro-fijo: #121312;
+  --papel-consola-fijo: #0e0f0e;
+  --tinta-consola-fijo: #f5f4f1;
+  --tinta-media-claro-fija: #686867;
+  --tinta-suave-claro-fija: #8f8f8d;
+  --tinta-media-consola-fija: #9d9d9b;
+  --tinta-suave-consola-fija: #767674;
   /* --- tipografía: tres roles --- */
-  --fuente-display: 'Familjen Grotesk', 'Bricolage Grotesque', system-ui, sans-serif;
-  --fuente-cuerpo: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fuente-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --fuente-cuerpo: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --fuente-dato: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
-  --interletrado-display: -0.02em;
+  --peso-display: 400;
+  --interletrado-display: -0.01em;
   --interlineado-display: 1.08;
-  --interlineado-cuerpo: 1.55;
+  --interlineado-cuerpo: 1.6;
   --interlineado-dato: 1.4;
   /* --- escala tipográfica (los display son fluidos entre 390 y 1440 px) --- */
   --t-xs: 0.694rem;
@@ -52,10 +56,10 @@
   --t-md: 1.000rem;
   --t-lg: 1.200rem;
   --t-xl: 1.440rem;
-  --t-2xl: clamp(1.244rem, 1.064rem + 0.046vw, 1.728rem);
-  --t-3xl: clamp(1.792rem, 1.533rem + 0.066vw, 2.488rem);
-  --t-4xl: clamp(2.580rem, 2.207rem + 0.096vw, 3.583rem);
-  --t-5xl: clamp(3.715rem, 3.178rem + 0.138vw, 5.160rem);
+  --t-2xl: clamp(1.469rem, 1.373rem + 0.025vw, 1.728rem);
+  --t-3xl: clamp(1.941rem, 1.738rem + 0.052vw, 2.488rem);
+  --t-4xl: clamp(2.437rem, 2.011rem + 0.109vw, 3.583rem);
+  --t-5xl: clamp(2.889rem, 2.046rem + 0.216vw, 5.160rem);
   /* --- espaciado: múltiplos de la base --- */
   --e1: 4px;
   --e2: 8px;
@@ -71,71 +75,73 @@
   --ancho-pagina: 1200px;
   --gutter: 20px;
   /* --- radios: distintos a propósito --- */
-  --r-chico: 3px;
-  --r-medio: 6px;
-  --r-panel: 10px;
+  --r-chico: 4px;
+  --r-medio: 10px;
+  --r-panel: 14px;
   --r-pastilla: 999px;
   /* --- movimiento --- */
   --mov-rapido: 120ms;
   --mov-medio: 240ms;
   --mov-lento: 420ms;
-  --curva: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
   /* --- motivos --- */
   --graduacion: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --papel: #0e1116;
-    --papel-alto: #191c20;
-    --papel-hundido: #0a0c0f;
-    --tinta: #e9ebe6;
-    --tinta-media: #9c9f9d;
-    --tinta-suave: #777a7a;
-    --linea: rgba(233, 235, 230, 0.14);
-    --linea-fuerte: rgba(233, 235, 230, 0.3);
-    --acento: #ff5a1f;
-    --acento-fuerte: #de501f;
-    --acento-texto: #ff5a1f;
-    --acento-tenue: rgba(255, 90, 31, 0.06);
-    --acento-linea: rgba(255, 90, 31, 0.45);
-    --sobre-acento: #10151c;
-    --ok: #6fb98a;
-    --ok-tenue: rgba(111, 185, 138, 0.08);
-    --rechazo: #e57a63;
-    --rechazo-tenue: rgba(229, 122, 99, 0.08);
-    --aviso: #e2b04a;
-    --aviso-tenue: rgba(226, 176, 74, 0.08);
-    --velo: rgba(16, 21, 28, 0.55);
-    --sombra-panel: 0 1px 0 rgba(233, 235, 230, 0.04) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.9);
-    --sombra-flotante: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 48px -20px rgba(0, 0, 0, 0.9);
-  }
+/* seguir_sistema: false en marca.json: la página abre siempre en consola; el otro tema solo por data-theme o .tema-claro. */
+
+:root[data-theme="light"], .tema-claro {
+  color-scheme: light;
+  --papel: #f5f4f1;
+  --papel-alto: #ffffff;
+  --papel-hundido: #ecebe8;
+  --tinta: #121312;
+  --tinta-media: #686867;
+  --tinta-suave: #8f8f8d;
+  --linea: rgba(18, 19, 18, 0.14);
+  --linea-fuerte: rgba(18, 19, 18, 0.3);
+  --acento: #256e56;
+  --acento-fuerte: #22614c;
+  --acento-texto: #1d7055;
+  --acento-tenue: rgba(37, 110, 86, 0.08);
+  --acento-linea: rgba(37, 110, 86, 0.45);
+  --sobre-acento: #f5f4f1;
+  --ok: #1d7055;
+  --ok-tenue: rgba(29, 112, 85, 0.08);
+  --rechazo: #ac3d29;
+  --rechazo-tenue: rgba(172, 61, 41, 0.08);
+  --aviso: #7d5a00;
+  --aviso-tenue: rgba(125, 90, 0, 0.08);
+  --extra: #6b3fc4;
+  --velo: rgba(18, 19, 18, 0.55);
+  --sombra-panel: 0 1px 2px rgba(18, 19, 18, 0.06), 0 12px 28px -22px rgba(18, 19, 18, 0.45);
+  --sombra-flotante: 0 2px 6px rgba(18, 19, 18, 0.08), 0 24px 48px -20px rgba(18, 19, 18, 0.35);
 }
 
-:root[data-theme="dark"], .tema-consola {
+.tema-consola {
   color-scheme: dark;
-  --papel: #0e1116;
-  --papel-alto: #191c20;
-  --papel-hundido: #0a0c0f;
-  --tinta: #e9ebe6;
-  --tinta-media: #9c9f9d;
-  --tinta-suave: #777a7a;
-  --linea: rgba(233, 235, 230, 0.14);
-  --linea-fuerte: rgba(233, 235, 230, 0.3);
-  --acento: #ff5a1f;
-  --acento-fuerte: #de501f;
-  --acento-texto: #ff5a1f;
-  --acento-tenue: rgba(255, 90, 31, 0.06);
-  --acento-linea: rgba(255, 90, 31, 0.45);
-  --sobre-acento: #10151c;
-  --ok: #6fb98a;
-  --ok-tenue: rgba(111, 185, 138, 0.08);
-  --rechazo: #e57a63;
-  --rechazo-tenue: rgba(229, 122, 99, 0.08);
-  --aviso: #e2b04a;
-  --aviso-tenue: rgba(226, 176, 74, 0.08);
-  --velo: rgba(16, 21, 28, 0.55);
-  --sombra-panel: 0 1px 0 rgba(233, 235, 230, 0.04) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.9);
-  --sombra-flotante: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 48px -20px rgba(0, 0, 0, 0.9);
+  --papel: #0e0f0e;
+  --papel-alto: #1a1a19;
+  --papel-hundido: #0a0a0a;
+  --tinta: #f5f4f1;
+  --tinta-media: #9d9d9b;
+  --tinta-suave: #767674;
+  --linea: rgba(245, 244, 241, 0.14);
+  --linea-fuerte: rgba(245, 244, 241, 0.3);
+  --acento: #3fbe94;
+  --acento-fuerte: #58c6a1;
+  --acento-texto: #3fbe94;
+  --acento-tenue: rgba(63, 190, 148, 0.08);
+  --acento-linea: rgba(63, 190, 148, 0.45);
+  --sobre-acento: #121312;
+  --ok: #66c9a4;
+  --ok-tenue: rgba(102, 201, 164, 0.08);
+  --rechazo: #f17860;
+  --rechazo-tenue: rgba(241, 120, 96, 0.08);
+  --aviso: #ffc65b;
+  --aviso-tenue: rgba(255, 198, 91, 0.08);
+  --extra: #a974eb;
+  --velo: rgba(18, 19, 18, 0.55);
+  --sombra-panel: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --sombra-flotante: 0 30px 70px rgba(0, 0, 0, 0.55);
 }
