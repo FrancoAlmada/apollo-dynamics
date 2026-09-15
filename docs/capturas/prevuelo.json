@@ -1,7 +1,7 @@
 {
   "_generado": "GENERADO por prevuelo/prevuelo.mjs",
   "objetivo": "../PROYECTOS/apollo-dynamics/index.html",
-  "corrido_en": "2026-09-15T15:49:30.366Z",
+  "corrido_en": "2026-09-15T16:15:14.576Z",
   "anchos": [
     360,
     390,
@@ -17,7 +17,7 @@
       "fallas": 0
     },
     "foco_360": {
-      "enfocados": 18,
+      "enfocados": 19,
       "sin_indicador": 0,
       "trampa": null
     },
@@ -34,7 +34,7 @@
       "fallas": 0
     },
     "foco_1440": {
-      "enfocados": 21,
+      "enfocados": 22,
       "sin_indicador": 0,
       "trampa": null
     },
