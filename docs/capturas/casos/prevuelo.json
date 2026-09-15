@@ -1,7 +1,7 @@
 {
   "_generado": "GENERADO por prevuelo/prevuelo.mjs",
-  "objetivo": "../PROYECTOS/apollo-dynamics/index.html",
-  "corrido_en": "2026-09-15T15:49:30.366Z",
+  "objetivo": "../PROYECTOS/apollo-dynamics/casos/sanatorio-del-plata.html",
+  "corrido_en": "2026-09-15T16:00:57.815Z",
   "anchos": [
     360,
     390,
@@ -13,33 +13,33 @@
   "avisos": 0,
   "medidas": {
     "contraste_360": {
-      "textos": 121,
+      "textos": 76,
       "fallas": 0
     },
     "foco_360": {
-      "enfocados": 18,
+      "enfocados": 5,
       "sin_indicador": 0,
       "trampa": null
     },
     "contraste_390": {
-      "textos": 121,
+      "textos": 76,
       "fallas": 0
     },
     "contraste_768": {
-      "textos": 121,
+      "textos": 76,
       "fallas": 0
     },
     "contraste_1440": {
-      "textos": 124,
+      "textos": 77,
       "fallas": 0
     },
     "foco_1440": {
-      "enfocados": 21,
+      "enfocados": 6,
       "sin_indicador": 0,
       "trampa": null
     },
     "lighthouse_mobile": {
-      "performance": 97,
+      "performance": 99,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100
@@ -53,9 +53,9 @@
   },
   "hallazgos": [],
   "capturas": [
-    "apollo-dynamics-index-360.png",
-    "apollo-dynamics-index-390.png",
-    "apollo-dynamics-index-768.png",
-    "apollo-dynamics-index-1440.png"
+    "sanatorio-del-plata-360.png",
+    "sanatorio-del-plata-390.png",
+    "sanatorio-del-plata-768.png",
+    "sanatorio-del-plata-1440.png"
   ]
 }

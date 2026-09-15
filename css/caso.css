@@ -1,0 +1,12 @@
+/* css/caso.css — lo propio de las páginas de caso de estudio (GENERADAS por HANGAR/carpeta). Todo var(--…). */
+.caso-hero h1 { font-size: var(--t-4xl); }
+.caso-texto { font-size: var(--t-lg); max-width: 60ch; }
+.caso-pasos .diferencial p { color: var(--tinta); font-size: var(--t-md); }
+.caso-capturas { display: grid; gap: var(--e5); }
+.caso-capturas .captura { margin: 0; }
+.caso-capturas img { width: 100%; height: auto; border-radius: var(--r-panel); border: 1px solid var(--linea); }
+.caso-capturas figcaption { font-size: var(--t-sm); color: var(--tinta-media); margin-top: var(--e2); }
+.caso-pruebas table { width: 100%; border-collapse: collapse; font-size: var(--t-sm); }
+.caso-pruebas td { padding: var(--e2) var(--e3); border-top: 1px solid var(--linea); }
+.caso-pruebas .ok { color: var(--ok); } .caso-pruebas .rojo { color: var(--rechazo); } .caso-pruebas .pend { color: var(--aviso); }
+.tabla-datos .ok { color: var(--ok); } .tabla-datos .pend { color: var(--aviso); }

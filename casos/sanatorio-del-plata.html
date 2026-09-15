@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GENERADO por carpeta/generar.py - no editar a mano: edita el json de origen y volve a correrlo (HANGAR/carpeta/casos/sanatorio-del-plata) -->
+<title>Sanatorio del Plata · caso de estudio · Apollo Dynamics</title>
+<meta name="description" content="Una recepcionista de WhatsApp que saca turnos, lee comprobantes y sabe cuándo callarse">
+<link rel="canonical" href="https://apollodynamics.com/casos/sanatorio-del-plata">
+<meta name="theme-color" content="#0e0f0e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sanatorio del Plata · caso de estudio">
+<meta property="og:description" content="Una recepcionista de WhatsApp que saca turnos, lee comprobantes y sabe cuándo callarse">
+<meta property="og:image" content="https://apollodynamics.com/assets/marca/og.png">
+<link rel="icon" href="../assets/marca/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../css/orbita/fuentes/dm-serif-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../css/orbita/fuentes/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/orbita/fuentes.css">
+<link rel="stylesheet" href="../css/orbita/tokens.css">
+<link rel="stylesheet" href="../css/orbita/base.css">
+<link rel="stylesheet" href="../css/orbita/orbita.css">
+<link rel="stylesheet" href="../css/sitio.css">
+<link rel="stylesheet" href="../css/caso.css">
+</head>
+<body>
+<a class="solo-lectores" href="#contenido">Saltar al contenido</a>
+<header class="nav-superior" data-nav>
+  <div class="contenedor nav-superior__interior">
+    <a class="nav-superior__marca" href="../" aria-label="Apollo Dynamics, ir al inicio"><img src="../assets/marca/logotipo.svg" alt="" width="330" height="64" style="width: auto; height: 36px"></a>
+    <nav class="nav-superior__menu" id="menu" aria-label="Navegación principal">
+      <a class="nav-superior__enlace" href="../#casos">Todos los casos</a>
+      <a class="boton boton--primario boton--chico" href="https://wa.me/5492996353269?text=Hola%20Franco%2C%20vi%20el%20caso%20Sanatorio%20del%20Plata" rel="noopener" target="_blank">Contactanos</a>
+    </nav>
+    <button class="nav-superior__hamburguesa" type="button" aria-expanded="false" aria-controls="menu" data-texto="Menú">Menú</button>
+  </div>
+</header>
+<main id="contenido">
+  <section class="contenedor hero caso-hero">
+    <p class="sello">Caso de estudio · Clínica · turnos por WhatsApp</p>
+    <h1>Sanatorio del Plata</h1>
+    <p class="hero__lema">Una recepcionista de WhatsApp que saca turnos, lee comprobantes y sabe cuándo callarse</p>
+    <p class="hero__bajada">Sanatorio del Plata es una clínica ficticia con ocho profesionales y un mostrador que cierra a las 21. Construimos el sistema completo que la atendería las 24 horas: un orquestador que decide a quién le toca cada mensaje, un agente de turnos que reserva sobre la agenda real, una base de conocimiento para las preguntas de siempre, lectura de comprobantes con OCR, recordatorios, escalación a una persona y un CRM para la recepción. Ocho workflows de n8n y un solo archivo de configuración para instalarlo en otra clínica.</p>
+    <div class="fila hero__acciones"><span class="badge badge--sin-punto">n8n</span><span class="badge badge--sin-punto">WhatsApp Cloud API</span><span class="badge badge--sin-punto">Google Sheets</span><span class="badge badge--sin-punto">Qdrant</span><span class="badge badge--sin-punto">Gemini</span><span class="badge badge--sin-punto">Telegram</span></div>
+  </section>
+  <section class="contenedor" aria-label="Métricas del caso"><div class="medidas"><div class="metrica"><span class="metrica__valor">+100 h</span><span class="metrica__rotulo">por semana sin nadie en el mostrador</span><span class="metrica__fuente">recepción de 9 a 21, siete días: son 168 horas de semana y 84 de mostrador. El asistente cubre el resto.</span></div><div class="metrica"><span class="metrica__valor">8 s</span><span class="metrica__rotulo">de respuesta promedio</span><span class="metrica__fuente">medido por el panel de métricas del propio CRM sobre las conversaciones de prueba</span></div><div class="metrica"><span class="metrica__valor">8</span><span class="metrica__rotulo">workflows de n8n</span><span class="metrica__fuente">SDP-0 a SDP-7: setup, indexador, asistente, OCR, recordatorios, escalación, CRM, alertas</span></div><div class="metrica"><span class="metrica__valor">1</span><span class="metrica__rotulo">archivo de configuración</span><span class="metrica__fuente">clinica.json: instalarlo en otra clínica es cargar sus datos</span></div></div></section>
+  <section class="contenedor seccion" id="problema">
+    <div class="titulo-seccion"><h2>El problema</h2></div>
+    <p class="caso-texto">Fuera del horario de recepción el WhatsApp suena y nadie contesta. Adentro del horario, la recepción repite las mismas respuestas: obras sociales, horarios, estudios. Y cuando un paciente escribe por una urgencia, el sistema tiene que reconocerla y no ofrecerle un turno para la semana que viene.</p>
+  </section>
+  <section class="contenedor seccion" id="como-funciona">
+    <div class="titulo-seccion"><h2>Cómo funciona</h2><p>Paso por paso, como pasa de verdad.</p></div>
+    <ol class="diferenciales caso-pasos"><li class="diferencial"><p>Un mensaje entra por WhatsApp Cloud API y lo normaliza un Code node: queda { mensaje, teléfono, nombre, canal }.</p></li><li class="diferencial"><p>El orquestador (un agente con tres herramientas) no resuelve: decide a quién le toca. Turnos, consultas o escalación.</p></li><li class="diferencial"><p>El agente de turnos consulta la planilla real de cada médico, reserva, modifica o cancela, y registra al paciente.</p></li><li class="diferencial"><p>Las preguntas frecuentes las contesta una base de conocimiento vectorial (Qdrant) armada desde los documentos de la clínica.</p></li><li class="diferencial"><p>Una urgencia se reconoce y va a la guardia: el sistema no le da un turno para la semana que viene a alguien con dolor de pecho.</p></li><li class="diferencial"><p>Los comprobantes de pago se leen con OCR y se concilian contra el padrón. Los recordatorios salen 24 horas antes.</p></li><li class="diferencial"><p>Lo que el bot no puede resolver lo anota y avisa a una persona por Telegram. Y si cualquier workflow se rompe, el SDP-7 lo cuenta.</p></li></ol>
+  </section>
+  <section class="contenedor seccion" id="capturas"><div class="titulo-seccion"><h2>El sistema, abierto</h2><p>Capturas reales del CRM y del panel, no maquetas.</p></div><div class="caso-capturas"><figure class="captura"><img src="../assets/casos/sanatorio-del-plata/panel-sanatorio-1288.webp" alt="Panel de métricas del CRM: conversaciones resueltas por el asistente, atención fuera de horario y tiempos de respuesta." width="1288" height="656" loading="lazy"><figcaption>Panel de métricas del CRM: conversaciones resueltas por el asistente, atención fuera de horario y tiempos de respuesta.</figcaption></figure><figure class="captura"><img src="../assets/casos/sanatorio-del-plata/agenda-sanatorio-1288.webp" alt="Agenda del CRM: turnos, profesionales, cobertura y estado, con filtros por fecha y especialidad." width="1288" height="675" loading="lazy"><figcaption>Agenda del CRM: turnos, profesionales, cobertura y estado, con filtros por fecha y especialidad.</figcaption></figure></div></section>
+  <section class="contenedor seccion" id="fases"><div class="titulo-seccion"><h2>Las fases</h2><p>Cada una con su criterio de listo y su estado real.</p></div><div class="tabla-scroll"><table class="tabla-datos"><thead><tr><th>Fase</th><th>Estado</th><th>Nota</th></tr></thead><tbody><tr><td>SDP-0</td><td class="pend">— apagada</td><td class="nota">apagado</td></tr><tr><td>SDP-1</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr><tr><td>SDP-2</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr><tr><td>SDP-3</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr><tr><td>SDP-4</td><td class="pend">— apagada</td><td class="nota">apagado — necesita plantilla aprobada por Meta</td></tr><tr><td>SDP-5</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr><tr><td>SDP-6</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr><tr><td>SDP-7</td><td class="ok">✔ activa</td><td class="nota">activo</td></tr></tbody></table></div></section>
+  <section class="contenedor seccion" id="pruebas">
+    <div class="titulo-seccion"><h2>Qué se probó</h2></div>
+    <div class="panel tarjeta caso-pruebas"><p>Este caso se probó a mano, conversación por conversación, antes de que existiera el verificador automático de la agencia. Los casos nuevos nacen con él.</p></div>
+  </section>
+  <section class="contenedor seccion" id="honestidad">
+    <p class="aviso-honesto"><strong>Con honestidad:</strong> Sanatorio del Plata no es un cliente: es un caso construido por la agencia como demostración, con marca y datos ficticios. Lo que sí es real es el sistema: los ocho workflows corren, el CRM se abre y las conversaciones de prueba están grabadas. Los números de esta página salen del propio panel del sistema, no de una estimación.</p>
+    <div class="fila"><a class="boton boton--primario boton--grande" href="https://wa.me/5492996353269?text=Hola%20Franco%2C%20vi%20el%20caso%20Sanatorio%20del%20Plata" rel="noopener" target="_blank">Quiero algo así para mi negocio</a><a class="boton boton--secundario boton--grande" href="../#casos">Ver los otros casos</a></div>
+  </section>
+</main>
+<footer class="pie-sitio pie-verde">
+  <div class="contenedor">
+    <div class="pie-verde__logo"><img src="../assets/marca/logotipo.svg" alt="Apollo Dynamics" width="330" height="64"></div>
+    <div class="pie-sitio__legal"><span>© 2026 Apollo Dynamics · Almagro, Buenos Aires</span><span>Este caso se regenera desde los archivos del proyecto con cada fase cerrada.</span></div>
+  </div>
+</footer>
+<script type="module" src="../css/orbita/orbita.js"></script>
+</body>
+</html>
