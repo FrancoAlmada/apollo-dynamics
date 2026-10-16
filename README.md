@@ -9,8 +9,14 @@ ejecución ni servicios de terceros. Las fuentes están autoalojadas.
 
 ## De dónde sale la identidad
 
+> **Este repo es autónomo.** Todo el CSS, las fuentes y los assets de marca que la página necesita
+> ya están copiados acá adentro: se clona, se abre y anda, sin nada más. Lo que sigue explica de
+> dónde salieron originalmente esas copias. `HANGAR/` está **fuera de alcance por defecto** (ver el
+> `CLAUDE.md` de la raíz de TRABAJO): Claude no lo abre ni corre sus generadores salvo que Franco
+> lo pida explícitamente. Regenerar desde ahí es una decisión manual, no parte del flujo normal.
+
 La identidad es la que Franco definió para la marca (tema oscuro, verde Apollo, DM Serif Display
-para titulares, Archivo para el texto, su logo con la A pincelada) y vive como configuración en
+para titulares, Archivo para el texto, su logo con la A pincelada) y quedó como configuración en
 `HANGAR/marca.json`. Este sitio **consume Órbita**, el sistema de diseño de la agencia:
 
 ```
