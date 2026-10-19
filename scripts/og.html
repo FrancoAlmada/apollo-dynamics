@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- La imagen que se ve al compartir el link (WhatsApp, LinkedIn): 1200x630.
+     Se regenera con: python scripts/hacer_og.py  -> sitio/og.jpg -->
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/sitio/css/sitio.css">
+<style>
+  body { margin: 0; width: 1200px; height: 630px; overflow: hidden; position: relative; background: #121312; }
+  .og-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .7; object-position: 65% 40%; }
+  .og-velo { position: absolute; inset: 0; background: linear-gradient(100deg, #121312 0%, rgba(18,19,18,.94) 38%, rgba(18,19,18,.5) 75%, rgba(18,19,18,.3) 100%); }
+  .og-in { position: absolute; inset: 0; padding: 72px 80px; display: flex; flex-direction: column; justify-content: space-between; }
+  .og-marca { display: flex; align-items: center; gap: 16px; }
+  .og-marca img:first-child { height: 58px; }
+  .og-marca img:last-child { height: 42px; }
+  .og-titulo { margin: 0 0 18px; font: 400 76px/.98 var(--serif); letter-spacing: -.026em; color: var(--titulo); }
+  .og-titulo span { color: var(--menta); }
+  .og-texto { margin: 0; max-width: 34ch; font: 400 26px/1.45 var(--sans); color: var(--texto-2); }
+  .og-pie { font: 600 18px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--menta); }
+</style>
+</head>
+<body>
+  <img class="og-fondo" src="/sitio/img/fondo-aurora-1280.webp" alt="">
+  <div class="og-velo"></div>
+  <div class="og-in">
+    <div class="og-marca">
+      <img src="/sitio/img/isotipo.webp" alt="">
+      <img src="/sitio/img/logotipo.webp" alt="">
+    </div>
+    <div>
+      <p class="og-titulo">Sistemas que potencian <span>tu negocio</span></p>
+      <p class="og-texto">Paneles de gestión, agentes de WhatsApp con IA y automatizaciones para PyMEs.</p>
+    </div>
+    <p class="og-pie">apollodynamics.tech</p>
+  </div>
+</body>
+</html>

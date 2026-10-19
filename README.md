@@ -1,92 +1,78 @@
 # Apollo Dynamics — la web
 
 Sitio de **Apollo Dynamics**, agencia de IA y automatización para PyMEs, emprendedores y agencias
-de Argentina y LatAm. Una sola página: hero, evidencia (la captura de un panel real), métricas,
-servicios, diferenciales, método, casos y contacto por WhatsApp.
+de Argentina y LatAm. Tres páginas: **Inicio** (`/`), **Servicios** (`/servicios/`) y **Casos**
+(`/casos/`).
 
-HTML, CSS y JavaScript puro. Sin frameworks, sin build step, sin dependencias en tiempo de
-ejecución ni servicios de terceros. Las fuentes están autoalojadas.
+HTML y CSS estáticos, con unas pocas líneas de JavaScript para el formulario. Sin frameworks, sin
+build y sin terceros: las fuentes, las imágenes y todo lo demás se sirven desde el mismo sitio.
 
-## De dónde sale la identidad
+## Qué hay acá
 
-> **Este repo es autónomo.** Todo el CSS, las fuentes y los assets de marca que la página necesita
-> ya están copiados acá adentro: se clona, se abre y anda, sin nada más. Lo que sigue explica de
-> dónde salieron originalmente esas copias. `HANGAR/` está **fuera de alcance por defecto** (ver el
-> `CLAUDE.md` de la raíz de TRABAJO): Claude no lo abre ni corre sus generadores salvo que Franco
-> lo pida explícitamente. Regenerar desde ahí es una decisión manual, no parte del flujo normal.
+| Carpeta | Qué es |
+|---|---|
+| `sitio/` | **Lo que se publica.** Es lo único que sirve el servidor |
+| `sitio/css/sitio.css` | Todos los estilos. Los tokens de color y tipografía están arriba de todo |
+| `sitio/js/sitio.js` | El formulario de contacto: arma el mensaje y abre WhatsApp. No guarda nada |
+| `sitio/img/` | Imágenes en WebP, generadas. **No se editan a mano** (ver abajo) |
+| `sitio/fuentes/` | DM Serif Display y Archivo (licencia OFL), auto-alojadas |
+| `diseno/` | El diseño final aprobado (`*.dc.html` + `LEEME-handoff.md`). Es la referencia de textos y estilos; no se publica |
+| `capturas/` | Capturas fuente de los casos que no vienen del diseño (Sáenz, carta de La Sfoglia) |
+| `scripts/` | Capturas, optimización de imágenes, revisión del sitio, imagen para compartir y publicación |
 
-La identidad es la que Franco definió para la marca (tema oscuro, verde Apollo, DM Serif Display
-para titulares, Archivo para el texto, su logo con la A pincelada) y quedó como configuración en
-`HANGAR/marca.json`. Este sitio **consume Órbita**, el sistema de diseño de la agencia:
-
-```
-css/orbita/          ← COPIAS generadas por HANGAR/scripts/generar.py. NO se editan acá.
-  tokens.css           variables (colores, tipografía, espaciado) generadas desde marca.json
-  base.css             reset, tipografía en tres roles, foco, regla graduada
-  orbita.css           componentes: botón, campo, métrica, badge, panel, estados…
-  orbita.js            navegación móvil, tabs, modales, toasts
-  fuentes.css + fuentes/   DM Serif Display, Archivo, JetBrains Mono (woff2, subset latino)
-assets/marca/        ← COPIAS: isotipo, logotipo, favicon (SVG) y la imagen OG (PNG)
-assets/img/          ← fotos de cielo de las tres secciones y capturas reales de los sistemas (WebP)
-css/sitio.css        ← lo propio de esta web (layout de cada sección). Sin colores a mano.
-js/sitio.js          ← el formulario: arma el mensaje y abre WhatsApp
-index.html
-vercel.json          ← cabeceras de seguridad y caché para Vercel
-docs/capturas/       ← lo que Prevuelo generó la última vez: capturas por ancho, informe, prevuelo.json
-```
-
-**Cambiar un color o una fuente de la marca es editar `HANGAR/marca.json` y correr el generador**:
-las copias de `css/orbita/` y `assets/marca/` se reescriben solas (y las fuentes que salieron de
-la marca se borran). Editarlas acá es perder el cambio en la próxima regeneración.
-
-## Verificación
-
-Antes de publicar, la página pasa **Prevuelo** (`HANGAR/prevuelo/prevuelo.mjs`): capturas a 360,
-390, 768 y 1440 px, cero scroll horizontal, contraste AA de todo texto contra su fondo computado,
-foco visible recorriendo con Tab, fuentes cargadas de verdad, ningún color fuera de los tokens, y
-Lighthouse en mobile y desktop. Es la etapa 2.3 de `HANGAR/scripts/verificar.ps1`.
+## Verlo en la compu
 
 ```powershell
-# desde HANGAR
-node prevuelo/prevuelo.mjs ../PROYECTOS/apollo-dynamics/index.html --capturas ../PROYECTOS/apollo-dynamics/docs/capturas --anchos 360,390,768,1440 --fuentes "DM Serif Display,Archivo,JetBrains Mono"
+cd sitio
+python -m http.server 8080
 ```
 
-El resultado de la última corrida está en `docs/capturas/informe.html` y `docs/capturas/prevuelo.json`.
+Abrir `http://localhost:8080`. Tiene que servirse desde `sitio/` (los links son absolutos: `/casos/`).
 
-## Correrlo localmente
+## Cambiar algo
 
-```bash
-python -m http.server 8899
+- **Un texto:** directo en el `index.html` de la página.
+- **Un estilo:** `sitio/css/sitio.css`. Lo que cambió respecto del diseño original está marcado con
+  `Ajuste:`. El bloque `@media (max-width: 760px)` es el celular.
+- **Una captura de un caso:** la fuente va en `diseno/assets/casos/` o en `capturas/`, y después:
+  ```powershell
+  python scripts/capturar_casos.py      # rehace las de Sáenz y la carta de La Sfoglia
+  python scripts/optimizar_imagenes.py  # pasa todo a WebP en sitio/img/ e imprime las medidas
+  ```
+  Las medidas que imprime van en los `width`/`height` del `<img>` (así la página no salta al cargar).
+- **La imagen para compartir el link** (`sitio/og.jpg`): `python scripts/hacer_og.py`.
+
+## Antes de publicar
+
+```powershell
+python scripts/revisar_sitio.py
 ```
 
-Abrir http://127.0.0.1:8899. El formulario funciona igual que publicado: arma el mensaje con lo que
-escribiste y abre WhatsApp. No hay backend ni servicio de formularios: **el sitio no guarda nada**.
+Recorre las tres páginas a 360, 390, 768, 1024 y 1440 de ancho y frena si hay scroll horizontal,
+errores, imágenes que no cargan, links o anclas rotas, o algo pedido a otro dominio. Deja capturas
+en `.capturas/` para mirarlas.
 
-## Deploy
+## Publicar
 
-Pensado para **Vercel**: importar el repo, raíz del proyecto = raíz del repo, sin build command.
-`vercel.json` ya trae `cleanUrls`, cabeceras de seguridad (CSP sin terceros) y caché larga para las
-fuentes. Cada `git push` a `main` republica.
+El sitio vive en el VPS (`apollodynamics.tech`): el servidor tiene un clon de este repo y Caddy sirve
+`sitio/`. Publicar un cambio es:
 
-Pendiente, y depende de Franco:
+```powershell
+git add . ; git commit -m "..." ; git push
+.\scripts\publicar.ps1
+```
 
-- [ ] Importar el repo en Vercel y apuntar el dominio (`<link rel="canonical">` y las metas `og:`
-      ya dicen `apollodynamics.com`; si el dominio final es otro, cambiar esas líneas).
-- [ ] Confirmar que el número de WhatsApp de `HANGAR/marca.json` (`identidad.whatsapp_e164`) es el
-      que quiere recibir las consultas: es el que usan todos los botones y el formulario.
+`publicar.ps1` revisa que todo esté commiteado y subido, y hace `git pull` en el VPS. No hay que
+reiniciar nada: Caddy sirve lo nuevo al instante. La infraestructura está en el repo `SERVIDOR`.
 
-## Honestidad sobre los casos
+## Los casos
 
-Los casos de la web fueron construidos por la agencia como demostración de capacidad, con negocios
-y datos ficticios. La página lo dice arriba de la sección, a propósito. Las capturas son de los
-sistemas reales corriendo; los números de la sección de métricas salen de sus propios paneles.
+Los cuatro casos son proyectos propios con marcas y datos ficticios, y la web lo dice. Cada uno vive
+en su repo:
 
-## Fotos
-
-Las tres fotos de cielo nocturno (`assets/img/hero-nebulosa.webp`, `metodo-via-lactea.webp`,
-`contacto-luna.webp`) son las que Franco eligió para su versión del sitio, recomprimidas a WebP a
-1280 px de ancho. Las capturas de los paneles son de los propios sistemas de la agencia.
-
-## Licencia
-
-Código bajo [MIT](LICENSE). Los activos de marca (`assets/marca/`) y las fotos están excluidos.
+| Caso | Repo |
+|---|---|
+| Sanatorio del Plata | `AUTOMATIZACIONES/casos/sanatorio_multiagente` |
+| Pastas La Sfoglia | `AUTOMATIZACIONES/casos/restaurante_pastas` |
+| Distribuidora Sáenz | `AUTOMATIZACIONES/casos/distribuidora_cobranzas` |
+| Toba Cars | `PROYECTOS/Toba Cars (v2)` |
