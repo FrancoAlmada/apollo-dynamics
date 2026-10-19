@@ -2,14 +2,12 @@
 .playwright-cli/
 .vscode/
 .idea/
+node_modules/
 
 # Sistema
 Thumbs.db
 desktop.ini
 .DS_Store
 
-# Capturas de verificación
-shot-*.png
-
-# Temporales de Prevuelo
-.tmp/
+# Capturas de verificacion (se regeneran con scripts/)
+.capturas/

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apollo Dynamics Agency — IA y automatización</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Archivo:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #121312; -webkit-font-smoothing: antialiased; }
+  a { color: #3FBE94; text-decoration-color: rgba(63,190,148,.4); text-underline-offset: 3px; }
+  a:hover { color: #5FD3AD; text-decoration-color: #5FD3AD; }
+  ::selection { background: #3FBE94; color: #121312; }
+  input, textarea, button { font-family: 'Archivo', sans-serif; }
+  input:focus-visible, textarea:focus-visible { outline: 2px solid #3FBE94; outline-offset: 1px; }
+  @keyframes ad-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { [data-ticker] { animation: none !important; } }
+</style>
+</helmet>
+
+<div style="background: #121312; color: #EFE5E5; font-family: 'Archivo', sans-serif; min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(18,19,18,.88); backdrop-filter: blur(14px); border-bottom: 1px solid #262A28;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 12px clamp(20px, 5vw, 56px); min-height: 76px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto;">
+        <img src="assets/brand/mark.png" alt="" width="490" height="490" style="height: 42px; width: auto; display: block;">
+        <img src="assets/brand/wordmark.png" alt="Apollodynamics" width="1844" height="520" style="height: 31px; width: auto; display: block;">
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px;">
+        <a href="#servicios" style="font: 500 14px/1 'Archivo', sans-serif; color: #B2ABAB; text-decoration: none;" style-hover="color: #EFE5E5;">Servicios</a>
+        <a href="#metodo" style="font: 500 14px/1 'Archivo', sans-serif; color: #B2ABAB; text-decoration: none;" style-hover="color: #EFE5E5;">Método</a>
+        <a href="#casos" style="font: 500 14px/1 'Archivo', sans-serif; color: #B2ABAB; text-decoration: none;" style-hover="color: #EFE5E5;">Casos</a>
+        <a href="{{ waLink }}" target="_blank" rel="noopener" style="font: 600 14px/1 'Archivo', sans-serif; color: #121312; background: #3FBE94; padding: 12px 19px; border-radius: 7px; text-decoration: none;" style-hover="background: #5FD3AD;">Contactanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position: relative; overflow: hidden; border-bottom: 1px solid #262A28;">
+    <img src="assets/space/aurora-verde.jpg" alt="" width="1280" height="853" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .78; object-position: 65% 40%;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, #121312 0%, rgba(18,19,18,.94) 30%, rgba(18,19,18,.62) 62%, rgba(18,19,18,.35) 100%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,19,18,.55) 0%, rgba(18,19,18,0) 30%, rgba(18,19,18,.7) 100%);"></div>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 128px) clamp(20px, 5vw, 56px) clamp(56px, 7vw, 104px);">
+      <p style="margin: 0 0 20px; display: flex; align-items: center; gap: 14px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .26em; text-transform: uppercase; color: #3FBE94;"><span style="width: 34px; height: 1px; background: #3FBE94; flex: none;"></span>Bienvenido a</p>
+      <h1 style="margin: 0 0 30px; font: 400 clamp(46px, 8.2vw, 108px)/.94 'DM Serif Display', serif; letter-spacing: -.026em; color: #F7F1F1; max-width: 17ch; text-wrap: pretty;">Apollo Dynamics <span style="color: #3FBE94;">Agency</span></h1>
+      <p style="margin: 0 0 16px; font: 400 clamp(19px, 2.2vw, 27px)/1.45 'DM Serif Display', serif; font-style: italic; color: #D8CFCF; max-width: 34ch; text-wrap: pretty;">Sistemas que potencian tu negocio.</p>
+      <p style="margin: 0 0 40px; font: 400 clamp(15px, 1.4vw, 18px)/1.7 'Archivo', sans-serif; color: #B2ABAB; max-width: 54ch; text-wrap: pretty;">Construimos paneles de gestión, agentes de WhatsApp con IA y automatizaciones para PyMEs, emprendedores y agencias. Sistemas concretos que podés mirar funcionando — no demos que se caen si el cliente pregunta algo fuera del guion.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="{{ waLink }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; font: 600 16px/1 'Archivo', sans-serif; color: #121312; background: #3FBE94; padding: 19px 28px; border-radius: 8px; text-decoration: none;" style-hover="background: #5FD3AD;">Escribinos por WhatsApp</a>
+        <a href="#casos" style="display: inline-flex; align-items: center; font: 500 16px/1 'Archivo', sans-serif; color: #EFE5E5; padding: 18px 28px; border: 1px solid #4A4E4C; border-radius: 8px; text-decoration: none;" style-hover="border-color: #3FBE94; color: #3FBE94;">Ver los sistemas funcionando</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 56px) 0;">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative;">
+      <span style="position: absolute; top: -14px; left: 20px; z-index: 2; font: 600 11px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #121312; background: #3FBE94; padding: 8px 13px; border-radius: 4px;">Evidencia · no maqueta</span>
+      <div style="background: #0B0C0B; border: 1px solid #2C302E; border-radius: 14px; padding: 12px; box-shadow: 0 34px 80px -34px rgba(0,0,0,.9);">
+        <div style="display: flex; align-items: center; gap: 9px; padding: 10px 6px 12px;">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #3FBE94; flex: none;"></span>
+          <span style="font: 500 12px/1.4 'Archivo', sans-serif; letter-spacing: .04em; color: #8B8585;">Sanatorio del Plata · panel de métricas · proyecto propio</span>
+        </div>
+        <img src="assets/casos/sanatorio-metricas-v2.png" alt="Panel de métricas: conversaciones resueltas por el asistente, atención fuera de horario y tiempos de respuesta." width="1440" height="1002" style="display: block; width: 100%; height: auto; border-radius: 8px;">
+      </div>
+    </div>
+  </section>
+
+  <div style="margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid #262A28; border-bottom: 1px solid #262A28; background: #171A18; overflow: hidden; padding: 16px 0;">
+    <div data-ticker="1" style="display: flex; width: max-content; gap: 40px; animation: ad-ticker 44s linear infinite;">
+      <span style="font: 500 12px/1 'Archivo', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #7E8781; white-space: nowrap;">Turnos por WhatsApp · Pedidos y reservas · Recordatorios automáticos · Lectura de comprobantes · Conciliación de pagos · Calificación de leads · Paneles con permisos · Alertas internas · Carta que se actualiza sola · Derivación a una persona ·</span>
+      <span style="font: 500 12px/1 'Archivo', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #7E8781; white-space: nowrap;">Turnos por WhatsApp · Pedidos y reservas · Recordatorios automáticos · Lectura de comprobantes · Conciliación de pagos · Calificación de leads · Paneles con permisos · Alertas internas · Carta que se actualiza sola · Derivación a una persona ·</span>
+    </div>
+  </div>
+
+  <sc-if value="{{ verEvidencia }}" hint-placeholder-val="{{ true }}">
+    <section style="padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 56px);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <p style="margin: 0 0 36px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .24em; text-transform: uppercase; color: #8B8585;">Lo que medimos, no lo que prometemos</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr)); gap: 1px; background: #262A28; border: 1px solid #262A28; border-radius: 12px; overflow: hidden;">
+          <div style="background: #171A18; padding: 32px 26px 34px;">
+            <div style="font: 400 clamp(42px, 5vw, 60px)/1 'DM Serif Display', serif; letter-spacing: -.02em; color: #3FBE94;">+100 h</div>
+            <p style="margin: 14px 0 0; font: 400 14px/1.65 'Archivo', sans-serif; color: #A39C9C;">por semana sin nadie en el mostrador de una clínica. Eso es lo que cubre el asistente.</p>
+          </div>
+          <div style="background: #171A18; padding: 32px 26px 34px;">
+            <div style="font: 400 clamp(42px, 5vw, 60px)/1 'DM Serif Display', serif; letter-spacing: -.02em; color: #3FBE94;">9 s</div>
+            <p style="margin: 14px 0 0; font: 400 14px/1.65 'Archivo', sans-serif; color: #A39C9C;">de respuesta mediana sobre 1.742 respuestas, medido por el propio panel del sistema.</p>
+          </div>
+          <div style="background: #171A18; padding: 32px 26px 34px;">
+            <div style="font: 400 clamp(42px, 5vw, 60px)/1 'DM Serif Display', serif; letter-spacing: -.02em; color: #3FBE94;">4</div>
+            <p style="margin: 14px 0 0; font: 400 14px/1.65 'Archivo', sans-serif; color: #A39C9C;">sistemas completos construidos y probados de punta a punta.</p>
+          </div>
+          <div style="background: #171A18; padding: 32px 26px 34px;">
+            <div style="font: 400 clamp(42px, 5vw, 60px)/1 'DM Serif Display', serif; letter-spacing: -.02em; color: #3FBE94;">0</div>
+            <p style="margin: 14px 0 0; font: 400 14px/1.65 'Archivo', sans-serif; color: #A39C9C;">consultas que quedan sin respuesta. Si el sistema no sabe, avisa a una persona.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="servicios" style="padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 68ch; margin: 0 auto clamp(44px, 5vw, 64px);">
+        <h2 style="margin: 0 0 22px; font: 400 clamp(34px, 5vw, 60px)/1.02 'DM Serif Display', serif; letter-spacing: -.022em; color: #F7F1F1; text-wrap: pretty;">Nuestros servicios</h2>
+        <p style="margin: 0; font: 400 clamp(15px, 1.4vw, 18px)/1.7 'Archivo', sans-serif; color: #B2ABAB; text-wrap: pretty;">Seis cosas que hacemos bien, explicadas en criollo. Si alguna te suena al problema que tenés hoy, entrá y mirá cómo lo resolvemos.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 20px;">
+        <a href="Servicios.dc.html#qa" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #248C73 0%, #1A6D5A 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #B9E3D6;">Calidad</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Consultoría y control de calidad</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #B9E3D6; text-wrap: pretty;">Revisamos automatizaciones o agentes que ya tenés — propios o de otro proveedor — para encontrar dónde fallan antes de que lo note un cliente.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+        <a href="Servicios.dc.html#paneles" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #27A383 0%, #1B7D65 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #CDEFE3;">Gestión</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Paneles y CRM a medida</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #CDEFE3; text-wrap: pretty;">Una pantalla propia del negocio donde el equipo ve turnos, pedidos, conversaciones y métricas — con permisos distintos según el rol.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+        <a href="Servicios.dc.html#agentes" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #1C9BA6 0%, #147682 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #C4ECEF;">Atención 24 horas</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Agentes de WhatsApp</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #C4ECEF; text-wrap: pretty;">Un asistente que contesta el WhatsApp del negocio las 24 horas: responde dudas, saca turnos, toma pedidos, y cuando el tema es delicado lo pasa a una persona sin que el cliente lo note.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+        <a href="Servicios.dc.html#n8n" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #2486B6 0%, #196790 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #C6E2F2;">Procesos</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Automatización interna</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #C6E2F2; text-wrap: pretty;">Conectamos las herramientas que ya usás — WhatsApp, planillas, bases, pagos, calendarios — para que los avisos, recordatorios y reportes pasen solos.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+        <a href="Servicios.dc.html#leads" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #2A69B2 0%, #1D4F8B 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #CADBF1;">Ventas</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Calificación de clientes</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #CADBF1; text-wrap: pretty;">Mide qué tan cerca está cada consulta de comprar — frío, tibio o caliente — con un puntaje explicado, y dispara el seguimiento correcto para cada caso.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+        <a href="Servicios.dc.html#web" style="display: flex; flex-direction: column; background: linear-gradient(155deg, #3762A8 0%, #274A85 100%); border: 1px solid rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px -24px rgba(0,0,0,.6); border-radius: 6px; padding: clamp(28px, 3vw, 38px); min-height: 290px; text-decoration: none;">
+          <p style="margin: 0 0 16px; font: 600 13px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #C9D5EE;">Presencia digital</p>
+          <h3 style="margin: 0 0 16px; font: 400 clamp(26px, 2.6vw, 34px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em; color: #F4FAF8;">Sitios web y landings</h3>
+          <p style="margin: 0 0 24px; font: 400 15px/1.65 'Archivo', sans-serif; color: #C9D5EE; text-wrap: pretty;">Hechos a mano, no con plantillas de constructor: livianos, rápidos, bien en el celular, con botón de WhatsApp y una estructura pensada para convertir.</p>
+          <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #F4FAF8; text-decoration: underline; text-underline-offset: 4px;">Ver servicio →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="metodo" style="position: relative; overflow: hidden; border-bottom: 1px solid #262A28;">
+    <img src="assets/space/via-lactea.jpg" alt="" width="1280" height="853" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #121312 0%, rgba(18,19,18,.82) 45%, #121312 100%);"></div>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px);">
+      <div style="display: flex; flex-direction: column; gap: 22px; margin-bottom: 56px;">
+        <h2 style="margin: 0; font: 400 clamp(34px, 4.6vw, 56px)/1.02 'DM Serif Display', serif; letter-spacing: -.022em; color: #F7F1F1; text-wrap: balance; max-width: 22ch;">Cada fase termina en algo que se puede probar</h2>
+        <p style="margin: 0; font: 400 17px/1.7 'Archivo', sans-serif; color: #C0B9B9; max-width: 60ch; text-wrap: pretty;">Trabajamos en etapas chicas y demostrables. Nunca vas a estar esperando meses para ver si funciona.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 0;">
+        <div style="border-top: 2px solid #3FBE94; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 01</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Diagnóstico</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">Entendemos el proceso real del negocio — no lo que debería pasar, sino lo que pasa hoy: dónde se pierden clientes y qué tareas comen más tiempo.</p>
+        </div>
+        <div style="border-top: 2px solid #2C6A56; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 02</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Diseño por fases</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">Construimos en etapas. Cada una termina en algo que se puede probar funcionando, no en una promesa a futuro.</p>
+        </div>
+        <div style="border-top: 2px solid #2C6A56; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 03</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Construcción con pruebas reales</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">Antes de entregar probamos con casos límite: preguntas fuera de tema, intentos de romperlo, situaciones delicadas, entre otras cosas.</p>
+        </div>
+        <div style="border-top: 2px solid #223B33; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 04</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Medición</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">El sistema se entrega con sus métricas: cuántas conversaciones resuelve, cuánto tiempo ahorró, cuánta atención hubo fuera del horario.</p>
+        </div>
+        <div style="border-top: 2px solid #223B33; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 05</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Puesta en marcha</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">Lo integramos al WhatsApp, las planillas y las herramientas que el negocio ya usa, y lo lanzamos de forma gradual para que el equipo lo adopte sin frenar las operaciones.</p>
+        </div>
+        <div style="border-top: 2px solid #223B33; padding: 26px 28px 30px 0;">
+          <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #3FBE94;">Fase 06</span>
+          <h3 style="margin: 14px 0 10px; font: 400 22px/1.2 'DM Serif Display', serif; color: #F7F1F1;">Acompañamiento</h3>
+          <p style="margin: 0; font: 400 15px/1.7 'Archivo', sans-serif; color: #ADA6A6; text-wrap: pretty;">Dejamos manuales pensados para cada persona que va a usar el sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="casos" style="padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; max-width: 66ch; margin: 0 auto 40px;">
+        <h2 style="margin: 0 0 22px; font: 400 clamp(34px, 5vw, 60px)/1.02 'DM Serif Display', serif; letter-spacing: -.022em; color: #F7F1F1; text-wrap: pretty;">Mirá los sistemas funcionando</h2>
+        <p style="margin: 0; font: 400 clamp(15px, 1.4vw, 18px)/1.7 'Archivo', sans-serif; color: #B2ABAB; text-wrap: pretty;">Cuatro proyectos propios, con marcas y datos ficticios, construidos para demostrar de qué somos capaces. Todavía no son clientes reales — lo decimos de entrada, porque el punto no es el testimonio: es que el sistema existe y se puede abrir.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 20px;">
+        <a href="Casos.dc.html#sanatorio" style="display: flex; flex-direction: column; background: #171A18; border: 1px solid #262A28; border-radius: 10px; overflow: hidden; text-decoration: none; transition: border-color .18s, transform .18s;" style-hover="border-color: #3FBE94; transform: translateY(-3px);">
+          <div style="background: #0B0C0B; padding: 14px 14px 0; flex: none;"><div style="aspect-ratio: 1288 / 678; overflow: hidden; border-radius: 6px 6px 0 0;">
+            <img src="assets/casos/sanatorio-agenda-v2.png" alt="Agenda del CRM de Sanatorio del Plata con turnos, profesionales y cobertura." width="1440" height="1365" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+            </div>
+          </div>
+          <div style="padding: 28px 30px 30px; display: flex; flex-direction: column; flex: 1;">
+            <p style="margin: 0 0 12px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3FBE94;">Caso insignia · Clínicas</p>
+            <h3 style="margin: 0 0 14px; font: 400 30px/1.08 'DM Serif Display', serif; letter-spacing: -.014em; color: #F7F1F1;">Sanatorio del Plata</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 'Archivo', sans-serif; color: #A39C9C; text-wrap: pretty;">Recepcionista de WhatsApp que saca turnos según la disponibilidad real de cada médico, lee comprobantes de pago, manda recordatorios y reconoce una urgencia para mandarla a la guardia en vez de darle un turno.</p>
+            <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #3FBE94;">Ver el caso completo →</span>
+          </div>
+        </a>
+        <a href="Casos.dc.html#sfoglia" style="display: flex; flex-direction: column; background: #171A18; border: 1px solid #262A28; border-radius: 10px; overflow: hidden; text-decoration: none; transition: border-color .18s, transform .18s;" style-hover="border-color: #3FBE94; transform: translateY(-3px);">
+          <div style="background: #1E4230; padding: 14px 14px 0; flex: none;"><div style="aspect-ratio: 1288 / 678; overflow: hidden; border-radius: 6px 6px 0 0;">
+            <img src="assets/casos/sfoglia-panel.png" alt="Panel de gestión de Pastas La Sfoglia con pedidos abiertos, reservas y consultas escaladas." width="1288" height="678" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+            </div>
+          </div>
+          <div style="padding: 28px 30px 30px; display: flex; flex-direction: column; flex: 1;">
+            <p style="margin: 0 0 12px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3FBE94;">Gastronomía</p>
+            <h3 style="margin: 0 0 14px; font: 400 30px/1.08 'DM Serif Display', serif; letter-spacing: -.014em; color: #F7F1F1;">Pastas La Sfoglia</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 'Archivo', sans-serif; color: #A39C9C; text-wrap: pretty;">Toma pedidos y reservas por WhatsApp como lo haría un empleado: conoce el menú y lo agotado en tiempo real, valida horarios de retiro y jamás ofrece un plato que no hay. Con carta pública que se actualiza sola.</p>
+            <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #3FBE94;">Ver el caso completo →</span>
+          </div>
+        </a>
+        <a href="Casos.dc.html#voltra" style="display: flex; flex-direction: column; background: #171A18; border: 1px solid #262A28; border-radius: 10px; overflow: hidden; text-decoration: none; transition: border-color .18s, transform .18s;" style-hover="border-color: #3FBE94; transform: translateY(-3px);">
+          <div style="background: #0B0C0B; padding: 14px 14px 0; flex: none;"><div style="aspect-ratio: 1288 / 678; border-radius: 6px 6px 0 0; background: #0B0C0B; padding: 26px 24px; display: flex; flex-direction: column; justify-content: center; gap: 14px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+              <span style="font: 500 12px/1 'Archivo', sans-serif; letter-spacing: .06em; color: #8B8585;">Interés del cliente · turno a turno</span>
+              <span style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .08em; color: #3FBE94;">CALIENTE · 82</span>
+            </div>
+            <div style="display: flex; align-items: flex-end; gap: 7px; height: 96px;">
+              <span style="flex: 1; height: 22%; background: #23282A; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 30%; background: #23282A; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 44%; background: #1F3B33; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 41%; background: #1F3B33; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 58%; background: #2C7A5F; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 71%; background: #2C7A5F; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 82%; background: #3FBE94; border-radius: 2px;"></span>
+              <span style="flex: 1; height: 100%; background: #3FBE94; border-radius: 2px;"></span>
+            </div>
+            <p style="margin: 0; font: 400 12px/1.5 'Archivo', sans-serif; color: #8B8585;">Esquema del panel de calificación — capturas en el caso</p>
+            </div>
+          </div>
+          <div style="padding: 28px 30px 30px; display: flex; flex-direction: column; flex: 1;">
+            <p style="margin: 0 0 12px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3FBE94;">Venta con IA</p>
+            <h3 style="margin: 0 0 14px; font: 400 30px/1.08 'DM Serif Display', serif; letter-spacing: -.014em; color: #F7F1F1;">Voltra Nimbus</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 'Archivo', sans-serif; color: #A39C9C; text-wrap: pretty;">Landing de un producto con un asistente que responde objeciones y, cuando detecta intención real de compra, pide el contacto y lo califica con un puntaje explicado. Según el resultado dispara solo el seguimiento correcto.</p>
+            <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #3FBE94;">Ver el caso completo →</span>
+          </div>
+        </a>
+        <a href="Casos.dc.html#toba" style="display: flex; flex-direction: column; background: #171A18; border: 1px solid #262A28; border-radius: 10px; overflow: hidden; text-decoration: none; transition: border-color .18s, transform .18s;" style-hover="border-color: #3FBE94; transform: translateY(-3px);">
+          <div style="background: #0A0A0C; padding: 14px 14px 0; flex: none;"><div style="aspect-ratio: 1288 / 678; overflow: hidden; border-radius: 6px 6px 0 0;">
+            <img src="assets/casos/toba-hero.png" alt="Portada del sitio de Toba Cars." width="2632" height="1666" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+          </div>
+          <div style="padding: 28px 30px 30px; display: flex; flex-direction: column; flex: 1;">
+            <p style="margin: 0 0 12px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3FBE94;">Sitio a medida</p>
+            <h3 style="margin: 0 0 14px; font: 400 30px/1.08 'DM Serif Display', serif; letter-spacing: -.014em; color: #F7F1F1;">Toba Cars</h3>
+            <p style="margin: 0 0 20px; font: 400 15px/1.7 'Archivo', sans-serif; color: #A39C9C; text-wrap: pretty;">Sitio de venta para una concesionaria, hecho a mano sin plantillas: catálogo filtrable por tipo de vehículo, WhatsApp en cada punto de contacto, accesible con teclado y lectores de pantalla, rápido en cualquier celular.</p>
+            <span style="margin-top: auto; font: 600 15px/1 'Archivo', sans-serif; color: #3FBE94;">Ver el caso completo →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="position: relative; overflow: hidden; border-top: 1px solid #262A28;">
+    <img src="assets/space/luna.jpg" alt="" width="1280" height="853" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .3;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #121312 0%, rgba(18,19,18,.86) 40%, #121312 100%);"></div>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px);">
+      <div style="max-width: 62ch; margin-bottom: 48px;">
+        <h2 style="margin: 0 0 22px; font: 400 clamp(34px, 5vw, 58px)/1.02 'DM Serif Display', serif; letter-spacing: -.022em; color: #F7F1F1; text-wrap: pretty;">Trabajemos juntos</h2>
+        <p style="margin: 0; font: 400 clamp(15px, 1.4vw, 18px)/1.7 'Archivo', sans-serif; color: #C0B9B9; text-wrap: pretty;">Contanos qué pasa hoy en tu negocio: clientes que se pierden, tiempo que se va en tareas repetidas, o gestión desordenada. La primera charla es para entender el proceso, no para venderte nada.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px; align-items: start;">
+        <div style="background: #3FBE94; border-radius: 10px; padding: 40px 34px 36px; color: #062018;">
+          <p style="margin: 0 0 14px; font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #0D3628;">Canal principal</p>
+          <p style="margin: 0 0 14px; display: flex; align-items: center; gap: 12px; font: 400 clamp(27px, 3.4vw, 38px)/1.05 'DM Serif Display', serif; letter-spacing: -.018em;"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true" style="display: block; flex: none;"><path fill="#062018" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.29-8.24Zm-3.6 4.1c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.16 1.75 2.79 4.24 3.8 2.07.84 2.49.67 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.23-.17-.48-.29-.25-.13-1.45-.72-1.68-.8-.23-.09-.4-.13-.56.12-.17.25-.65.83-.79.99-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.1-.51.12-.12.29-.31.44-.48.14-.16.19-.29.29-.48.1-.19.05-.35-.03-.5-.08-.14-.55-1.35-.76-1.84-.16-.4-.33-.4-.48-.41h-.58Z"></path></svg>WhatsApp</p>
+          <p style="margin: 0 0 30px; font: 400 15px/1.7 'Archivo', sans-serif; color: #0D3628;">Te contesta una persona. Si estamos ocupados, te contesta el sistema y te avisamos igual.</p>
+          <a href="{{ waLink }}" target="_blank" rel="noopener" style="display: inline-flex; font: 600 16px/1 'Archivo', sans-serif; color: #3FBE94; background: #121312; padding: 18px 26px; border-radius: 8px; text-decoration: none;" style-hover="background: #000000;">Abrir WhatsApp</a>
+          <div style="margin-top: 34px; padding-top: 24px; border-top: 1px solid rgba(6,32,24,.25); display: grid; gap: 10px;">
+            <a href="mailto:francoivanalmada@gmail.com" style="font: 500 15px/1.5 'Archivo', sans-serif; color: #062018; text-decoration-color: rgba(6,32,24,.45);">francoivanalmada@gmail.com</a>
+            <a href="https://www.linkedin.com/in/franco-almada-571394290/" target="_blank" rel="noopener" style="font: 500 15px/1.5 'Archivo', sans-serif; color: #062018; text-decoration-color: rgba(6,32,24,.45);">linkedin.com/in/franco-almada</a>
+          </div>
+        </div>
+        <sc-if value="{{ verFormulario }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ enviar }}" style="background: #171A18; border: 1px solid #2C302E; border-radius: 10px; padding: 34px; display: grid; gap: 18px;">
+            <div style="display: grid; gap: 8px;">
+              <label for="ad-nombre" style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #B2ABAB;">Nombre</label>
+              <input id="ad-nombre" name="nombre" type="text" required="required" placeholder="Franco Almada" style="font: 400 15px/1 'Archivo', sans-serif; color: #EFE5E5; background: #0E0F0E; border: 1px solid #2F3331; border-radius: 6px; padding: 14px;">
+            </div>
+            <div style="display: grid; gap: 8px;">
+              <label for="ad-negocio" style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #B2ABAB;">Negocio y rubro</label>
+              <input id="ad-negocio" name="negocio" type="text" placeholder="Consultorio odontológico, 3 profesionales" style="font: 400 15px/1 'Archivo', sans-serif; color: #EFE5E5; background: #0E0F0E; border: 1px solid #2F3331; border-radius: 6px; padding: 14px;">
+            </div>
+            <div style="display: grid; gap: 8px;">
+              <label for="ad-mensaje" style="font: 600 12px/1 'Archivo', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #B2ABAB;">¿Qué te está pasando hoy?</label>
+              <textarea id="ad-mensaje" name="mensaje" rows="4" placeholder="Perdemos consultas los fines de semana y no llegamos a contestar el WhatsApp." style="font: 400 15px/1.55 'Archivo', sans-serif; color: #EFE5E5; background: #0E0F0E; border: 1px solid #2F3331; border-radius: 6px; padding: 14px; resize: vertical;"></textarea>
+            </div>
+            <button type="submit" style="font: 600 16px/1 'Archivo', sans-serif; color: #121312; background: #3FBE94; border: none; border-radius: 8px; padding: 18px 26px; cursor: pointer;" style-hover="background: #5FD3AD;">Mandar la consulta</button>
+            <p style="margin: 0; font: 400 13px/1.6 'Archivo', sans-serif; color: #8B8585;">Se abre WhatsApp con tu mensaje ya escrito. No guardamos nada de esto en el sitio.</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #3FBE94; padding: clamp(56px, 7vw, 88px) clamp(20px, 5vw, 56px) 40px;">
+    <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-flex; align-items: center; gap: 16px; background: #121312; padding: 16px 26px; border-radius: 14px; margin-bottom: 32px;">
+        <img src="assets/brand/mark.png" alt="" width="490" height="490" style="height: 40px; width: auto; display: block;">
+        <img src="assets/brand/wordmark.png" alt="Apollodynamics" width="1844" height="520" style="height: 28px; width: auto; display: block;">
+      </div>
+      <p style="margin: 0 0 36px; font: 400 clamp(14px, 1.2vw, 16px)/1.7 'Archivo', sans-serif; color: #0D3628; text-wrap: pretty;">Apollo Dynamics es una agencia de IA y automatización dedicada a que las PyMEs atiendan mejor de lo que su tamaño permitiría. Sistemas concretos, con métricas y probados de punta a punta. Escribinos y hagamos crecer tu negocio.</p>
+      <nav style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-bottom: 40px;">
+        <a href="Servicios.dc.html#agentes" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Agentes de WhatsApp</a>
+        <a href="Servicios.dc.html#leads" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Calificación de clientes</a>
+        <a href="Servicios.dc.html#n8n" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Automatización interna</a>
+        <a href="Servicios.dc.html#paneles" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Paneles y CRM</a>
+        <a href="Servicios.dc.html#web" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Sitios web</a>
+        <a href="Servicios.dc.html#qa" style="font: 600 15px/1 'Archivo', sans-serif; color: #062018; text-decoration: none;" style-hover="text-decoration: underline;">Control de calidad</a>
+      </nav>
+      <div style="border-top: 1px solid rgba(6,32,24,.22); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: center;">
+        <span style="font: 400 13px/1.5 'Archivo', sans-serif; color: #0D3628;">Argentina y LatAm</span>
+        <span style="font: 400 13px/1.5 'Archivo', sans-serif; color: #0D3628;">Los casos de estudio usan marcas y datos ficticios.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="{{ waLink }}" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp" style="position: fixed; right: 22px; bottom: 22px; z-index: 60; display: flex; align-items: center; gap: 10px; background: #3FBE94; color: #121312; padding: 15px 23px; border-radius: 999px; font: 600 15px/1 'Archivo', sans-serif; text-decoration: none; box-shadow: 0 16px 40px -14px rgba(0,0,0,.75);" style-hover="background: #5FD3AD;"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" style="display: block; flex: none;"><path fill="#121312" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.29-8.24Zm-3.6 4.1c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.16 1.75 2.79 4.24 3.8 2.07.84 2.49.67 2.94.63.45-.04 1.45-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.23-.17-.48-.29-.25-.13-1.45-.72-1.68-.8-.23-.09-.4-.13-.56.12-.17.25-.65.83-.79.99-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.1-.51.12-.12.29-.31.44-.48.14-.16.19-.29.29-.48.1-.19.05-.35-.03-.5-.08-.14-.55-1.35-.76-1.84-.16-.4-.33-.4-.48-.41h-.58Z"></path></svg>WhatsApp</a>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5492996353269&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;verEvidencia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;},&quot;verFormulario&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const tel = (this.props.whatsapp ?? "5492996353269").replace(/\D/g, "");
+    const base = "https://wa.me/" + tel;
+    return {
+      waLink: base + "?text=" + encodeURIComponent("Hola Apollo Dynamics, quiero automatizar la atención de mi negocio."),
+      verEvidencia: this.props.verEvidencia ?? true,
+      verFormulario: this.props.verFormulario ?? true,
+      enviar: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const partes = [
+          "Hola Apollo Dynamics, soy " + (f.nombre.value || "").trim() + ".",
+          f.negocio.value ? "Negocio: " + f.negocio.value.trim() + "." : "",
+          f.mensaje.value ? "Lo que me pasa: " + f.mensaje.value.trim() : ""
+        ].filter(Boolean);
+        window.open(base + "?text=" + encodeURIComponent(partes.join(" ")), "_blank", "noopener");
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
