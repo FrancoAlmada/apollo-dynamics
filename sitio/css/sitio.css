@@ -211,11 +211,10 @@ input:focus-visible, textarea:focus-visible { outline-offset: 1px; }
   font: 400 clamp(46px, 8.2vw, 108px)/.94 var(--serif); letter-spacing: -.026em;
   color: var(--titulo); max-width: 17ch; text-wrap: pretty;
 }
-.hero__titulo span { color: var(--menta); }
 .hero__lema {
   margin: 0 0 16px;
   font: italic 400 clamp(19px, 2.2vw, 27px)/1.45 var(--serif);
-  color: #D8CFCF; max-width: 34ch; text-wrap: pretty;
+  color: var(--menta); max-width: 34ch; text-wrap: pretty;  /* Ajuste: en el diseño era #D8CFCF; el título quedó todo en blanco y el verde pasa a la frase */
 }
 .hero__texto {
   margin: 0 0 40px;
