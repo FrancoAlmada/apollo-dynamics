@@ -183,6 +183,20 @@ input:focus-visible, textarea:focus-visible { outline-offset: 1px; }
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(18,19,18,.55) 0%, rgba(18,19,18,0) 30%, rgba(18,19,18,.7) 100%);
 }
+/* Ajuste: en pantallas anchas el velo sigue al bloque de texto y no al borde de la pantalla.
+   Anclado al borde, dejaba una banda negra de hasta ~770px a la izquierda que tapaba la aurora
+   y la foto parecía corrida. Hasta 1500px queda exactamente como el diseño. */
+@media (min-width: 1500px) {
+  .hero .fondo-foto { object-position: 35% 25%; }
+  .hero__velo-1 {
+    background: linear-gradient(100deg,
+      rgba(18,19,18,.45) 0%,
+      rgba(18,19,18,.94) calc(50% - 560px),
+      rgba(18,19,18,.9) calc(50% + 60px),
+      rgba(18,19,18,.5) calc(50% + 420px),
+      rgba(18,19,18,.32) 100%);
+  }
+}
 .hero__in {
   position: relative; max-width: var(--ancho); margin: 0 auto;
   padding: clamp(64px, 9vw, 128px) var(--lateral) clamp(56px, 7vw, 104px);
